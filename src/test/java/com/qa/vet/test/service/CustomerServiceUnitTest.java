@@ -10,9 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.qa.vet.models.Customer;
-import com.qa.vet.repo.CustomerRepo;
-import com.qa.vet.service.CustomerService;
+import com.qa.cinema.models.Customer;
+import com.qa.cinema.repo.CustomerRepo;
+import com.qa.cinema.service.CustomerService;
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 class CustomerServiceUnitTest {
