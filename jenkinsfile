@@ -17,8 +17,9 @@ pipeline {
 			sh '''
 			ssh -i /home/jenkins/.ssh/id_rsa jenkins@18.132.36.167 << EOF
 			rm -rf SpringBoot-Jenkins
-			git clone https://github.com/DanyelHarrison/SpringBoot-Jenkins.git
-			cd SpringBoot-Jenkins
+			git clone https://github.com/shailynch/QACinema.git
+			cd QACinema
+			git checkout developmentCentral
 			rm -f ./src/main/resources/application-dev.properties
 			echo 'spring.jpa.hibernate.ddl-auto=create-drop
 spring.h2.console.enabled=false
