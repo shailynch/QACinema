@@ -52,7 +52,9 @@ public class CustomerController {
 			existing = CustomerRepo.find(id);
 			existing.setFirstName(customer.getFirstName());
 			existing.setLastName(customer.getLastName());
+			existing.setEmail(customer.getDob());
 			existing.setEmail(customer.getEmail());
+			existing.setEmail(customer.getMobile());
 			service.updateCustomer(existing, id);
 
 			return customer.toString();

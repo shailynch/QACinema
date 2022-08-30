@@ -49,7 +49,9 @@ public class CustomerService {
 			Customer oldCustomer = currentCustomer.get();
 			oldCustomer.setFirstName(updateCustomer.getFirstName());
 			oldCustomer.setLastName(updateCustomer.getLastName());
+			oldCustomer.setDob(updateCustomer.getDob());
 			oldCustomer.setEmail(updateCustomer.getEmail());
+			oldCustomer.setMobile(updateCustomer.getMobile());
 
 			return repo.save(oldCustomer);
 		}

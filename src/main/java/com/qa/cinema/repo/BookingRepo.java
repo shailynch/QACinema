@@ -6,13 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.qa.cinema.models.Appointment;
+import com.qa.cinema.models.Booking;
 
 @Repository
-public interface AppointmentRepo extends JpaRepository<Appointment, Long> {
+public interface BookingRepo extends JpaRepository<Booking, Long> {
 	// custom queries
 
-	@Query(value = "SELECT * FROM appointment", nativeQuery = true)
-	public List<Appointment> allFromAppointment();
+	@Query(value = "SELECT * FROM booking", nativeQuery = true)
+	public List<Booking> allFromBooking();
 
 }

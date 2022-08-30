@@ -18,7 +18,11 @@ public class Customer {
 	@Column
 	private String lastName;
 	@Column
+	private String dob;
+	@Column
 	private String email;
+	@Column
+	private String mobile;
 
 	public Long getId() {
 		return Id;
@@ -50,6 +54,22 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	@Override
@@ -98,17 +118,23 @@ public class Customer {
 
 	}
 
-	public Customer(String firstName, String lastName, String email) {
-		this.setFirstName(firstName);
-		this.setLastName(lastName);
-		this.setEmail(email);
+	public Customer(Long id, String firstName, String lastName, String dob, String email, String mobile) {
+		super();
+		Id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.email = email;
+		this.mobile = mobile;
 	}
 
-	public Customer(Long id, String firstName, String lastName, String email) {
-		this.setId(id);
-		this.setFirstName(firstName);
-		this.setLastName(lastName);
-		this.setEmail(email);
+	public Customer(String firstName, String lastName, String dob, String email, String mobile) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.email = email;
+		this.mobile = mobile;
 	}
 
 }

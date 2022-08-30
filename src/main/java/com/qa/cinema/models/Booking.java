@@ -9,16 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Appointment {
+public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
 	// Name that is not null
 	@Column
-	private Long vetID;
+	private Long viewingID;
 	@Column
-	private Long petID;
+	private String bookingDate;
 	@Column
 	private Long customerID;
 
@@ -38,30 +38,31 @@ public class Appointment {
 		this.customerID = customerID;
 	}
 
-	public Long getVetID() {
-		return vetID;
+	public Long getViewingID() {
+		return viewingID;
 	}
 
-	public void setVetID(Long vetID) {
-		this.vetID = vetID;
+	public void setViewingID(Long viewingID) {
+		this.viewingID = viewingID;
 	}
 
-	public Long getPetID() {
-		return petID;
+	public String getBookingDate() {
+		return bookingDate;
 	}
 
-	public void setPetID(Long petID) {
-		this.petID = petID;
+	public void setBookingDate(String bookingDate) {
+		this.bookingDate = bookingDate;
 	}
 
 	@Override
 	public String toString() {
-		return "Appointment [Id=" + Id + ", vetID=" + vetID + ", petID=" + petID + ", customerID=" + customerID + "]";
+		return "Appointment [Id=" + Id + ", viewingID=" + viewingID + ", bookingDate=" + bookingDate + ", customerID="
+				+ customerID + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id, customerID, petID, vetID);
+		return Objects.hash(Id, customerID, bookingDate, viewingID);
 	}
 
 	@Override
@@ -72,25 +73,25 @@ public class Appointment {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Appointment other = (Appointment) obj;
+		Booking other = (Booking) obj;
 		return Objects.equals(Id, other.Id) && Objects.equals(customerID, other.customerID)
-				&& Objects.equals(petID, other.petID) && Objects.equals(vetID, other.vetID);
+				&& Objects.equals(bookingDate, other.bookingDate) && Objects.equals(viewingID, other.viewingID);
 	}
 
-	public Appointment() {
+	public Booking() {
 
 	}
 
-	public Appointment(Long customerID, Long petID, Long vetID) {
+	public Booking(Long customerID, String bookingDate, Long viewingID) {
 		this.setCustomerID(customerID);
-		this.setPetID(petID);
-		this.setVetID(vetID);
+		this.setBookingDate(bookingDate);
+		this.setViewingID(viewingID);
 	}
 
-	public Appointment(Long id, Long customerID, Long petID, Long vetID) {
+	public Booking(Long id, Long customerID, String bookingDate, Long viewingID) {
 		this.setId(id);
-		this.setPetID(petID);
-		this.setVetID(vetID);
+		this.setBookingDate(bookingDate);
+		this.setViewingID(viewingID);
 		this.setCustomerID(customerID);
 	}
 
