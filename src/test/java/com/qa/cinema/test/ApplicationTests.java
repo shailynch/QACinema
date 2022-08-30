@@ -1,4 +1,4 @@
-package com.qa.vet.test;
+package com.qa.cinema.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

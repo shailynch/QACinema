@@ -28,7 +28,7 @@ class CustomerServiceUnitTest {
 
 	@Test
 	void addCustomer() {
-		Customer TEST_CUSTOMER = new Customer("firstname", "lastname", "email");
+		Customer TEST_CUSTOMER = new Customer("firstname", "lastname", "email", null, null);
 
 		Mockito.when(this.repo.save(Mockito.any(Customer.class))).thenReturn(TEST_CUSTOMER);
 
