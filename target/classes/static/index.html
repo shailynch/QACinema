@@ -4,58 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shai's Vet</title>
+    <title>QA Cinema</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="header">
         <!-- header nav bar  -->
         <div class="topnav">
-        <a href="index.html" >Home</a>
+        <a href="index.html" >QA Cinema</a> 
+        <a href="#"> films</a>
+        <!-- can be changed for graphic -->
             <div class="topnav-right">
                 <!-- new customer register -->
-                <a href="newCustomerForm.html">new customer register</a>
-                <!-- new pet register -->
-                <a href="newPetForm.html">register your pet</a>
+                <a href="newCustomerForm.html">register account</a>
                 <!-- existing customer update -->
-                <a href="updateCustomerForm.html">Existing customer update</a>
-                <!-- existing pet update -->
-                <a href="updatePetForm.html">Existing pet update</a>
-                <!-- Request an appointment -->
+                <a href="updateCustomerForm.html">update account</a>
+                <!-- new booking  -->
+                <a href="#ß ">new bookng</a>
+                <!-- update booking-->
+                <a href="#">update booking</a>
             </div>
           </div>
-        <h1>
-            <img src="logo.png" alt="shai's vet logo">
-            Shai's Vet
-        </h1>
-        <!-- surgery number  -->
-        <div class="header-right">
-            <i class="fa fa-phone"> 01702000000 </i>
-            Vet Number 
-            <!-- out of ours number -->
-            <i class="fa fa-clock-o"> 01702000000 </i>
-            Out of hours Number 
-            <!-- book appointment -->
-        </div>
-    </div>
-    <div class="body">
-	    <div class="slider">
-	        <!-- pet slider -->
-	        <div class="album py-5 bg-light">
-	            <div class="container">
-	                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"></div>
-	                    <div class="col">
-	                        <div class="card shadow-sm">
-	                            <img src="pets.webp" class="bd-placeholder-img card-img-top" alt="pets">
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-        <!-- about vets  -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        
+                <div class="container">
+                  <div class="carousel-caption text-start">
+                    <h1>Example Film headline.</h1>
+                    <p>Film description</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Film poster</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Example Film headline.</h1>
+                        <p>Film description</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Film poster</a></p>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Example Film headline.</h1>
+                        <p>Film description</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Film poster</a></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
     </div>
     <div class="contact">
         <!-- contact form -->
@@ -63,40 +83,38 @@
     <div class="py-5 mainFooter">
         <div class="container ">
             <div class="row">
-              <div class="col-6 col-md-2 mb-3">
-                <h5>Shai's Vets</h5>
+              <div class="col-3 col-md-2 mb-3">
+                <h5>QA Cinema</h5>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-                  <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li> -->
-                  <li class="nav-item mb-2"><a href="newVetForm.html" class="nav-link p-0 text-muted">Add vet</a></li>
-                 
+                  <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li> -->                 
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                  <li class="nav-item mb-2">1 vet way london E1 2PL</li>
+                  <li class="nav-item mb-2">1 QA way london E1 2PL</li>
                 </ul>
               </div>
         
              <div class="col-6 col-md-2 mb-3">
                 <ul class="nav flex-column">
-                  <h5>Services</h5>
-                  <li class="nav-item mb-2">Flea treatment</li>
-                  <li class="nav-item mb-2">Diagnostic treatment</li>
-                  <li class="nav-item mb-2">Preventive Treatment</li>
-                  <li class="nav-item mb-2">Medical Treatment</li>
                 </ul>
               </div>
               <div class="col-6 col-md-2 mb-3">
-                <ul class="nav flex-column">
-                 <li><a href="newAppointmentForm.html">Create an appointment</a></li>
-                  <li><a href="updateAppointmentForm.html">Update an appointment</a></li>
-                </ul>
-                
                 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>&copy; 2022 Company, Inc. All rights reserved.</p>
                   </div>
             </div>
+                
             </div>
+            <i class="fa fa-phone"> 01702000000 </i>
+                Cinema Number 
+                <!-- out of ours numb
+                    /+
+                    
+                    er -->
+                <i class="fa fa-clock-o"> 01702000000 </i>
+                Out of hours Number 
 </div>    
 <script src="./js/script.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
