@@ -13,66 +13,71 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qa.cinema.models.Pet;
-import com.qa.cinema.repo.PetRepo;
-import com.qa.cinema.service.PetService;
+import com.qa.cinema.models.Movie;
+import com.qa.cinema.repo.MovieRepo;
+import com.qa.cinema.service.MovieService;
 
 @RestController
-@RequestMapping("/pet")
-public class PetController {
+@RequestMapping("/movie")
+public class MovieController {
 
-	private final PetService service;
+	private final MovieService service;
 
 	@Autowired
-	PetController(PetService service) {
+	MovieController(MovieService service) {
 		this.service = service;
 	}
 
 	// Aggregate root
 	// tag::get-aggregate-root[]
 	@GetMapping("/all")
-	List<Pet> all() {
+	List<Movie> all() {
 		return service.readAll();
 
 	}
 
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newPetForm(@RequestBody Pet pet) {
-		Pet newPet = pet;
-		service.addPet(newPet);
-		return pet.toString();
+	public String newMovieForm(@RequestBody Movie movie) {
+		Movie newMovie = movie;
+		service.addMovie(newMovie);
+		return movie.toString();
 	}
 
 	@GetMapping("/{id}")
-	Pet one(@PathVariable Long id) {
+	Movie one(@PathVariable Long id) {
 
-		return service.readPet(id);
-//      .orElseThrow(() -> new PetNotFoundException(id));
+		return service.readMovie(id);
+//      .orElseThrow(() -> new MovieNotFoundException(id));
 	}
 
 	@CrossOrigin
 	@PutMapping("/update/{id}")
-	public String updatePetForm(@PathVariable Long id, @RequestBody Pet pet) {
-		Pet existing;
+	public String updateMovieForm(@PathVariable Long id, @RequestBody Movie movie) {
+		Movie existing;
 		try {
-			existing = PetRepo.findByID(id);
-			existing.setName(pet.getName());
-			existing.setType(pet.getType());
-			existing.setCustomerID(pet.getCustomerID());
+			existing = MovieRepo.findByID(id);
+			existing.setTitle(movie.getTitle());
+			existing.setRuntime(movie.getRuntime());
+			existing.setCast(movie.getCast());
+			existing.setGenre(movie.getGenre());
+			existing.setReleaseDate(movie.getReleaseDate());
+			existing.setAgeRating(movie.getAgeRating());
+			existing.setDescription(movie.getDescription());
+			existing.setPosterUrl(movie.getPosterUrl());
 
-			return pet.toString();
+			return movie.toString();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			Pet newPet = pet;
-			service.addPet(newPet);
-			return pet.toString();
+			Movie newMovie = movie;
+			service.addMovie(newMovie);
+			return movie.toString();
 		}
 
 	}
 
 	@DeleteMapping("/{id}")
-	void deletePet(@PathVariable Long id) {
-		service.deleteByPetID(id);
+	void deleteMovie(@PathVariable Long id) {
+		service.deleteByMovieID(id);
 	}
 }

@@ -1,5 +1,7 @@
 package com.qa.cinema.models;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,64 +9,111 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Pet {
+public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
-	// Name that is not null
+	// Title that is not null
 	@Column
-	private String name;
+	private String title;
 	@Column
-	private String type;
+	private int runtime;
 	@Column
-	private Long customerID;
+	private String cast;
+	@Column
+	private String genre;
+	@Column
+	private String releaseDate;
+	@Column
+	private String ageRating;
+	@Column
+	private String description;
+	@Column
+	private String posterUrl;
 
 	public Long getId() {
 		return Id;
+	}
+
+	public int getRuntime() {
+		return runtime;
+	}
+
+	public void setRuntime(int runtime) {
+		this.runtime = runtime;
+	}
+
+	public String getCast() {
+		return cast;
+	}
+
+	public void setCast(String cast) {
+		this.cast = cast;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getAgeRating() {
+		return ageRating;
+	}
+
+	public void setAgeRating(String ageRating) {
+		this.ageRating = ageRating;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPosterUrl() {
+		return posterUrl;
+	}
+
+	public void setPosterUrl(String posterUrl) {
+		this.posterUrl = posterUrl;
 	}
 
 	public void setId(Long Id) {
 		this.Id = Id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getType() {
-		return type;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public Long getCustomerID() {
-		return customerID;
-	}
-
-	public void setCustomerID(Long customerID) {
-		this.customerID = customerID;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	@Override
 	public String toString() {
-		return "id:" + Id + " first name:" + name + " type:" + type + "customerID" + customerID;
+		return "Movie [Id=" + Id + ", title=" + title + ", runtime=" + runtime + ", cast=" + cast + ", genre=" + genre
+				+ ", releaseDate=" + releaseDate + ", ageRating=" + ageRating + ", description=" + description
+				+ ", posterUrl=" + posterUrl + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		return result;
+		return Objects.hash(Id, ageRating, cast, description, genre, posterUrl, releaseDate, runtime, title);
 	}
 
 	@Override
@@ -75,40 +124,43 @@ public class Pet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pet other = (Pet) obj;
-		if (getName() == null) {
-			if (other.getName() != null)
-				return false;
-		} else if (!getName().equals(other.getName()))
-			return false;
-		if (Id == null) {
-			if (other.Id != null)
-				return false;
-		} else if (!Id.equals(other.Id))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		return true;
+		Movie other = (Movie) obj;
+		return Objects.equals(Id, other.Id) && Objects.equals(ageRating, other.ageRating)
+				&& Objects.equals(cast, other.cast) && Objects.equals(description, other.description)
+				&& Objects.equals(genre, other.genre) && Objects.equals(posterUrl, other.posterUrl)
+				&& Objects.equals(releaseDate, other.releaseDate) && runtime == other.runtime
+				&& Objects.equals(title, other.title);
 	}
 
-	public Pet() {
+	public Movie() {
 
 	}
 
-	public Pet(String name, String type, Long customerID) {
-		this.setName(name);
-		this.setType(type);
-		this.setCustomerID(customerID);
+	public Movie(String title, int runtime, String cast, String genre, String releaseDate, String ageRating,
+			String description, String posterUrl) {
+		super();
+		this.title = title;
+		this.runtime = runtime;
+		this.cast = cast;
+		this.genre = genre;
+		this.releaseDate = releaseDate;
+		this.ageRating = ageRating;
+		this.description = description;
+		this.posterUrl = posterUrl;
 	}
 
-	public Pet(Long id, String name, String type, Long customerID) {
-		this.setId(id);
-		this.setName(name);
-		this.setType(type);
-		this.setCustomerID(customerID);
+	public Movie(Long id, String title, int runtime, String cast, String genre, String releaseDate, String ageRating,
+			String description, String posterUrl) {
+		super();
+		Id = id;
+		this.title = title;
+		this.runtime = runtime;
+		this.cast = cast;
+		this.genre = genre;
+		this.releaseDate = releaseDate;
+		this.ageRating = ageRating;
+		this.description = description;
+		this.posterUrl = posterUrl;
 	}
 
 }

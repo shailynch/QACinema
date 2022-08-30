@@ -6,58 +6,62 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.qa.cinema.models.Pet;
-import com.qa.cinema.repo.PetRepo;
+import com.qa.cinema.models.Movie;
+import com.qa.cinema.repo.MovieRepo;
 
 @Component
-public class PetService {
-	private Pet pet;
-	private PetRepo repo;
+public class MovieService {
+	private Movie movie;
+	private MovieRepo repo;
 
 	@Autowired
-	public PetService(PetRepo repo) {
+	public MovieService(MovieRepo repo) {
 		super();
-		this.pet = new Pet();
+		this.movie = new Movie();
 		this.repo = repo;
 	}
 
 	// create
-	public Pet addPet(Pet newPet) {
-		return repo.save(newPet);
+	public Movie addMovie(Movie newMovie) {
+		return repo.save(newMovie);
 	}
 
 	// read
-	public Pet readPet(Long id) {
+	public Movie readMovie(Long id) {
 		return repo.findById(id).get();
-		// .get returns null or the pet as the pet would be optional
+		// .get returns null or the movie as the movie would be optional
 		// type check would be better
 	}
 
-	public List<Pet> readAll() {
-		return repo.allFromPet();
-		// .get returns null or the pet as the pet would be optional
+	public List<Movie> readAll() {
+		return repo.allFromMovie();
+		// .get returns null or the movie as the movie would be optional
 		// type check would be better
 	}
 
-	// update - change to current pet and new pet
-	public Pet updatePet(Pet updatePet, Long id) {
-		Optional<Pet> currentPet = this.repo.findById(id);
-		if (currentPet.get() instanceof Pet) {
-			Pet oldPet = currentPet.get();
-			oldPet.setName(updatePet.getName());
-			oldPet.setType(updatePet.getType());
-			oldPet.setCustomerID(updatePet.getCustomerID());
-
-			return repo.save(oldPet);
+	// update - change to current movie and new movie
+	public Movie updateMovie(Movie updateMovie, Long id) {
+		Optional<Movie> currentMovie = this.repo.findById(id);
+		if (currentMovie.get() instanceof Movie) {
+			Movie oldMovie = currentMovie.get();
+			oldMovie.setTitle(updateMovie.getTitle());
+			oldMovie.setRuntime(updateMovie.getRuntime());
+			oldMovie.setCast(updateMovie.getCast());
+			oldMovie.setGenre(updateMovie.getGenre());
+			oldMovie.setReleaseDate(updateMovie.getReleaseDate());
+			oldMovie.setAgeRating(updateMovie.getAgeRating());
+			oldMovie.setDescription(updateMovie.getDescription());
+			oldMovie.setPosterUrl(updateMovie.getPosterUrl());
+			return repo.save(oldMovie);
 		}
 		return null;
 
 	}
 
 	// delete
-	public boolean deleteByPetID(Long id) {
-		Optional<Pet> currentPet = this.repo.findById(id);
-		boolean isPresent = (currentPet.isPresent()) ? true : false;
+	public boolean deleteByMovieID(Long id) {
+		Optional<Movie> currentMovie = this.repo.findById(id);
+		boolean isPresent = (currentMovie.isPresent()) ? true : false;
 		if (isPresent) {
 			this.repo.deleteById(id);
 			return true;
