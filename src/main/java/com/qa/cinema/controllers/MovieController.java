@@ -3,6 +3,8 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +23,10 @@ import com.qa.cinema.service.MovieService;
 @RequestMapping("/movie")
 public class MovieController {
 
-	private final MovieService service;
-
 	@Autowired
-	MovieController(MovieService service) {
+	MovieService service;
+
+	public MovieController(MovieService service) {
 		this.service = service;
 	}
 
@@ -36,12 +38,19 @@ public class MovieController {
 
 	}
 
+//	@CrossOrigin
+//	@PostMapping("/add")
+//	public String newMovieForm(@RequestBody Movie movie) {
+//		Movie newMovie = movie;
+//		service.addMovie(newMovie);
+//		return movie.toString();
+//	}
+
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newMovieForm(@RequestBody Movie movie) {
-		Movie newMovie = movie;
-		service.addMovie(newMovie);
-		return movie.toString();
+	public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
+		Movie createMovie = service.addMovie(movie);
+		return new ResponseEntity<Movie>(createMovie, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/{id}")
