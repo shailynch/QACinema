@@ -3,6 +3,8 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.cinema.models.Movie;
-import com.qa.cinema.repo.MovieRepo;
 import com.qa.cinema.service.MovieService;
 
 @RestController
@@ -31,7 +32,7 @@ public class MovieController {
 	// Aggregate root
 	// tag::get-aggregate-root[]
 	@GetMapping("/all")
-	List<Movie> all() {
+	public List<Movie> getAllMovies() {
 		return service.readAll();
 
 	}
@@ -58,29 +59,35 @@ public class MovieController {
 //      .orElseThrow(() -> new MovieNotFoundException(id));
 	}
 
-	@CrossOrigin
+//	@CrossOrigin
+//	@PutMapping("/update/{id}")
+//	public String updateMovieForm(@PathVariable Long id, @RequestBody Movie movie) {
+//		Movie existing;
+//		try {
+//			existing = MovieRepo.findByID(id);
+//			existing.setTitle(movie.getTitle());
+//			existing.setRuntime(movie.getRuntime());
+//			existing.setCast(movie.getCast());
+//			existing.setGenre(movie.getGenre());
+//			existing.setReleaseDate(movie.getReleaseDate());
+//			existing.setAgeRating(movie.getAgeRating());
+//			existing.setDescription(movie.getDescription());
+//			existing.setPosterUrl(movie.getPosterUrl());
+//
+//			return movie.toString();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			Movie newMovie = movie;
+//			service.addMovie(newMovie);
+//			return movie.toString();
+//		}
+//
+//	}
+
 	@PutMapping("/update/{id}")
-	public String updateMovieForm(@PathVariable Long id, @RequestBody Movie movie) {
-		Movie existing;
-		try {
-			existing = MovieRepo.findByID(id);
-			existing.setTitle(movie.getTitle());
-			existing.setRuntime(movie.getRuntime());
-			existing.setCast(movie.getCast());
-			existing.setGenre(movie.getGenre());
-			existing.setReleaseDate(movie.getReleaseDate());
-			existing.setAgeRating(movie.getAgeRating());
-			existing.setDescription(movie.getDescription());
-			existing.setPosterUrl(movie.getPosterUrl());
-
-			return movie.toString();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Movie newMovie = movie;
-			service.addMovie(newMovie);
-			return movie.toString();
-		}
-
+	public ResponseEntity<Movie> updateMovieById(@PathVariable("movieId") Long Id, @RequestBody Movie movie) {
+		Movie updatedMovie = this.service.updateMovie(movie, Id);
+		return new ResponseEntity<Movie>(updatedMovie, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")

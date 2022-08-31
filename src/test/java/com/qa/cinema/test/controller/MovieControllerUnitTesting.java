@@ -1,27 +1,30 @@
 
 package com.qa.cinema.test.controller;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qa.cinema.controllers.MovieController;
 import com.qa.cinema.models.Movie;
+import com.qa.cinema.repo.MovieRepo;
 import com.qa.cinema.service.MovieService;
 
-@WebMvcTest
+@SpringBootTest
 public class MovieControllerUnitTesting {
 
 	@Autowired
-	private MockMvc mvc;
+	private MovieController controller;
 
 	@Autowired
 	private ObjectMapper mapper;
@@ -29,18 +32,58 @@ public class MovieControllerUnitTesting {
 	@MockBean
 	private MovieService service;
 
+	@MockBean
+	private MovieRepo repo;
+
 	@Test
 	public void createMovieTest() throws Exception {
-		Movie testMovie = new Movie("Cool Runnings", 98, "Me", "Comedy", "10/09/1990", "PG",
-				"Disney movie about bobsledding", "https://picsum.photos/200");
-		String testMovieAsJSON = this.mapper.writeValueAsString(testMovie);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+		List<Movie> movies = new ArrayList<>();
 
-		Mockito.when(this.service.addMovie(testMovie)).thenReturn(testMovie);
+		Mockito.when(this.service.addMovie(validMovie)).thenReturn(validMovie);
+		movies.add(validMovie);
+		String response = movies.toString();
+		response = response.substring(1, response.length() - 1);
+		assertThat(response).isEqualTo(controller.newMovieForm(validMovie));
+		Mockito.verify(this.service, Mockito.times(1)).addMovie(validMovie);
+	}
 
-		mvc.perform(post("/movie/add").content(testMovieAsJSON).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isCreated()).andExpect(content().json(testMovieAsJSON));
+	@Test
+	public void getAllMoviesTest() {
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+		List<Movie> movies = new ArrayList<>();
+		movies.add(validMovie);
+		Mockito.when(this.service.readAll()).thenReturn(movies);
+		assertThat(movies).isEqualTo(controller.getAllMovies());
+		Mockito.verify(this.service, Mockito.times(1)).readAll();
+	}
 
-		Mockito.verify(this.service, Mockito.times(1)).addMovie(testMovie);
+//	@Test
+//	public void updateMovieById() {
+//		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+//		Movie updateMovie = new Movie("movie", 90, "bill", "genre", "87", "12", "descr", "image");
+//		List<Movie> movies = new ArrayList<>();
+//		movies.add(validMovie);
+//
+//		Mockito.when(this.service.updateMovie(validMovie, updateMovie.getId())).thenReturn(updateMovie);
+//		String response = movies.toString();
+//		response = response.substring(1, response.length() - 1);
+//		assertThat(response).isEqualTo(controller.updateMovieForm(updateMovie.getId(), validMovie));
+//		Mockito.verify(this.service, Mockito.times(1)).updateMovie(validMovie, validMovie.getId());
+//	}
+
+	@Test
+	public void updateMovieById() {
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+		List<Movie> movies = new ArrayList<>();
+		movies.add(validMovie);
+
+		Movie updateMovie = new Movie("movie", 90, "bill", "genre", "87", "12", "descr", "image");
+
+		Mockito.when(this.service.updateMovie(updateMovie, validMovie.getId())).thenReturn(validMovie);
+		ResponseEntity<Movie> response = new ResponseEntity<Movie>(validMovie, HttpStatus.OK);
+		assertThat(response).isEqualTo(controller.updateMovieById(validMovie.getId(), updateMovie));
+		Mockito.verify(this.service, Mockito.times(1)).updateMovie(updateMovie, validMovie.getId());
 	}
 
 }
