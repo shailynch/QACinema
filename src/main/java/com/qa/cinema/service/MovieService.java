@@ -4,20 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.qa.cinema.models.Movie;
 import com.qa.cinema.repo.MovieRepo;
 
-@Component
+@Service
 public class MovieService {
-	private Movie movie;
+
+	@Autowired
 	private MovieRepo repo;
 
 	@Autowired
 	public MovieService(MovieRepo repo) {
-		super();
-		this.movie = new Movie();
+//		super();
+//		this.movie = new Movie();
 		this.repo = repo;
 	}
 
