@@ -19,7 +19,7 @@ public class ViewingUnitTest {
 	@BeforeAll
 	public static void createViewing() {
 		System.out.println("Creating viewing");
-		viewing = new Viewing(1L, 1L, 1L, 1L, "12");
+		viewing = new Viewing(1L, 1L, 1L, "12");
 	}
 
 	@Test
@@ -30,9 +30,8 @@ public class ViewingUnitTest {
 
 	@Test
 	public void testToString() {
-		String expecting = "Viewing [Id=" + viewing.getId() + ", viewingID=" + viewing.getViewingID() + ", screenID="
-				+ viewing.getScreenID() + ", movieID=" + viewing.getMovieID() + ", startTime=" + viewing.getStartTime()
-				+ "]";
+		String expecting = "Viewing [Id=" + viewing.getId() + ", screenID=" + viewing.getScreenID() + ", movieID="
+				+ viewing.getMovieID() + ", startTime=" + viewing.getStartTime() + "]";
 		assertEquals(expecting, viewing.toString());
 	}
 
@@ -40,7 +39,7 @@ public class ViewingUnitTest {
 	public void constructorTests() {
 		Viewing viewing1 = new Viewing();
 		Viewing viewing2 = new Viewing(1L, 1L, 1L, "1");
-		Viewing viewing3 = new Viewing(2L, 2L, 2L, 2L, "2");
+		Viewing viewing3 = new Viewing(2L, 2L, 2L, "2");
 
 		assertTrue(viewing1 instanceof Viewing == true);
 		assertTrue(viewing2 instanceof Viewing == true);
@@ -54,18 +53,6 @@ public class ViewingUnitTest {
 		testViewing.setId(5L);
 
 		Field expected = testViewing.getClass().getDeclaredField("Id");
-		expected.setAccessible(true);
-		assertEquals(expected.get(testViewing), 5L);
-
-	}
-
-	@Test
-	public void setViewingIdTest()
-			throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		Viewing testViewing = new Viewing();
-		testViewing.setViewingID(5L);
-
-		Field expected = testViewing.getClass().getDeclaredField("viewingID");
 		expected.setAccessible(true);
 		assertEquals(expected.get(testViewing), 5L);
 

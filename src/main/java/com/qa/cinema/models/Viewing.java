@@ -16,8 +16,6 @@ public class Viewing {
 
 	// Name that is not null
 	@Column
-	private Long viewingID;
-	@Column
 	private Long screenID;
 	@Column
 	private Long movieID;
@@ -30,14 +28,6 @@ public class Viewing {
 
 	public void setId(Long Id) {
 		this.Id = Id;
-	}
-
-	public Long getViewingID() {
-		return viewingID;
-	}
-
-	public void setViewingID(Long viewingID) {
-		this.viewingID = viewingID;
 	}
 
 	public Long getScreenID() {
@@ -66,7 +56,7 @@ public class Viewing {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(movieID, screenID, startTime, viewingID);
+		return Objects.hash(movieID, screenID, startTime);
 	}
 
 	@Override
@@ -79,30 +69,28 @@ public class Viewing {
 			return false;
 		Viewing other = (Viewing) obj;
 		return Objects.equals(movieID, other.movieID) && Objects.equals(screenID, other.screenID)
-				&& Objects.equals(startTime, other.startTime) && Objects.equals(viewingID, other.viewingID);
+				&& Objects.equals(startTime, other.startTime);
 	}
 
 	@Override
 	public String toString() {
-		return "Viewing [Id=" + Id + ", viewingID=" + viewingID + ", screenID=" + screenID + ", movieID=" + movieID
-				+ ", startTime=" + startTime + "]";
+		return "Viewing [Id=" + Id + ", screenID=" + screenID + ", movieID=" + movieID + ", startTime=" + startTime
+				+ "]";
 	}
 
 	public Viewing() {
 
 	}
 
-	public Viewing(Long viewingID, Long screenID, Long movieID, String startTime) {
-		this.viewingID = viewingID;
+	public Viewing(Long screenID, Long movieID, String startTime) {
 		this.screenID = screenID;
 		this.movieID = movieID;
 		this.startTime = startTime;
 	}
 
-	public Viewing(Long id, Long viewingID, Long screenID, Long movieID, String startTime) {
+	public Viewing(Long id, Long screenID, Long movieID, String startTime) {
 		super();
 		Id = id;
-		this.viewingID = viewingID;
 		this.screenID = screenID;
 		this.movieID = movieID;
 		this.startTime = startTime;
