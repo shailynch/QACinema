@@ -1,6 +1,7 @@
 body {
-   min-height: 400px;
+   min-height: 100px;
    margin-bottom: 350px;
+   background-color: #e6ffff;
 }
 .header {
     height: 310px;
@@ -65,7 +66,7 @@ body {
 
   footer {
     background-color: #0e5f99;
-    color: white;
+    color: #e6ffff;
     position: fixed;
   	bottom: 0;
   	width: 100%;
@@ -74,7 +75,7 @@ body {
   
   .mainFooter{
     background-color: #0e5f99;
-    color: white;
+    color:#e6ffff;
   	width: 100%;
   }
   
@@ -88,4 +89,32 @@ body {
 
 main {
 	overflow: show;
+}
+
+#background-match li a a:active a:hover a:visited{
+	color:#e6ffff;
+}
+
+.navlink {
+	color:#e6ffff;
+}
+
+
+.navlink a:link {
+  color:#e6ffff;
+}
+
+/* visited link */
+.navlink a:visited {
+  color:#e6ffff;
+}
+
+/* mouse over link */
+.navlink a:hover {
+  color:#e6ffff;
+}
+
+/* selected link */
+.navlink a:active {
+  color:#e6ffff;
 }
