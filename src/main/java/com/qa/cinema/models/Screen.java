@@ -36,7 +36,7 @@ public class Screen {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id, capacity);
+		return Objects.hash(capacity);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class Screen {
 		if (getClass() != obj.getClass())
 			return false;
 		Screen other = (Screen) obj;
-		return Objects.equals(Id, other.Id) && Objects.equals(capacity, other.capacity);
+		return Objects.equals(capacity, other.capacity);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class Screen {
 
 	}
 
-	public Screen(Long id) {
+	public Screen(Long capacity) {
 		this.capacity = capacity;
 	}
 
