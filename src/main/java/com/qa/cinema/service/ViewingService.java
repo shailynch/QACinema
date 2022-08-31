@@ -4,20 +4,19 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.qa.cinema.models.Viewing;
 import com.qa.cinema.repo.ViewingRepo;
 
-@Component
+@Service
 public class ViewingService {
-	private Viewing viewing;
+
+	@Autowired
 	private ViewingRepo repo;
 
 	@Autowired
 	public ViewingService(ViewingRepo repo) {
-		super();
-		this.viewing = new Viewing();
 		this.repo = repo;
 	}
 
