@@ -17,8 +17,6 @@ public class MovieService {
 
 	@Autowired
 	public MovieService(MovieRepo repo) {
-//		super();
-//		this.movie = new Movie();
 		this.repo = repo;
 	}
 
