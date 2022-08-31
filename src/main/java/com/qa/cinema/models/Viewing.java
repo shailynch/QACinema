@@ -66,7 +66,7 @@ public class Viewing {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id, movieID, screenID, startTime, viewingID);
+		return Objects.hash(movieID, screenID, startTime, viewingID);
 	}
 
 	@Override
@@ -78,9 +78,8 @@ public class Viewing {
 		if (getClass() != obj.getClass())
 			return false;
 		Viewing other = (Viewing) obj;
-		return Objects.equals(Id, other.Id) && Objects.equals(movieID, other.movieID)
-				&& Objects.equals(screenID, other.screenID) && Objects.equals(startTime, other.startTime)
-				&& Objects.equals(viewingID, other.viewingID);
+		return Objects.equals(movieID, other.movieID) && Objects.equals(screenID, other.screenID)
+				&& Objects.equals(startTime, other.startTime) && Objects.equals(viewingID, other.viewingID);
 	}
 
 	@Override
