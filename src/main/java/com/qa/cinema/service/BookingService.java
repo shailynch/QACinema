@@ -4,20 +4,19 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.qa.cinema.models.Booking;
 import com.qa.cinema.repo.BookingRepo;
 
-@Component
+@Service
 public class BookingService {
-	private Booking booking;
+
+	@Autowired
 	private BookingRepo repo;
 
 	@Autowired
 	public BookingService(BookingRepo repo) {
-		super();
-		this.booking = new Booking();
 		this.repo = repo;
 	}
 
