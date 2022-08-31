@@ -8,13 +8,16 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>com.qa.vet</artifactId>
+	<groupId>com.qa</groupId>
+	<artifactId>QACinema</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com.qa.vet</name>
-	<description>Demo project for Spring Boot</description>
+	<name>QACinema</name>
+	<description>Group project for QA</description>
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +67,14 @@
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>2.3.8</version>
+		</dependency>
+		
+				<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.9.0</version> <!--$NO-MVN-MAN-VER$-->
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
