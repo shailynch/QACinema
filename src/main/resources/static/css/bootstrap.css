@@ -3636,7 +3636,7 @@ textarea.form-control-lg {
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: var(--bs-link-color);
   --bs-nav-link-hover-color: var(--bs-link-hover-color);
-  --bs-nav-link-disabled-color: #6c757d;
+  --bs-nav-link-disabled-color: #e6ffff;;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
