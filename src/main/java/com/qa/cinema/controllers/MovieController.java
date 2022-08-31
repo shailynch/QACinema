@@ -37,20 +37,20 @@ public class MovieController {
 
 	}
 
-	@CrossOrigin
-	@PostMapping("/add")
-	public String newMovieForm(@RequestBody Movie movie) {
-		Movie newMovie = movie;
-		service.addMovie(newMovie);
-		return movie.toString();
-	}
-
 //	@CrossOrigin
 //	@PostMapping("/add")
-//	public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
-//		Movie createMovie = service.addMovie(movie);
-//		return new ResponseEntity<Movie>(createMovie, HttpStatus.CREATED);
+//	public String newMovieForm(@RequestBody Movie movie) {
+//		Movie newMovie = movie;
+//		service.addMovie(newMovie);
+//		return movie.toString();
 //	}
+
+	@CrossOrigin
+	@PostMapping("/add")
+	public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
+		Movie createMovie = service.addMovie(movie);
+		return new ResponseEntity<Movie>(createMovie, HttpStatus.CREATED);
+	}
 
 	@GetMapping("/{id}")
 	Movie one(@PathVariable Long id) {
@@ -58,31 +58,6 @@ public class MovieController {
 		return service.readMovie(id);
 //      .orElseThrow(() -> new MovieNotFoundException(id));
 	}
-
-//	@CrossOrigin
-//	@PutMapping("/update/{id}")
-//	public String updateMovieForm(@PathVariable Long id, @RequestBody Movie movie) {
-//		Movie existing;
-//		try {
-//			existing = MovieRepo.findByID(id);
-//			existing.setTitle(movie.getTitle());
-//			existing.setRuntime(movie.getRuntime());
-//			existing.setCast(movie.getCast());
-//			existing.setGenre(movie.getGenre());
-//			existing.setReleaseDate(movie.getReleaseDate());
-//			existing.setAgeRating(movie.getAgeRating());
-//			existing.setDescription(movie.getDescription());
-//			existing.setPosterUrl(movie.getPosterUrl());
-//
-//			return movie.toString();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			Movie newMovie = movie;
-//			service.addMovie(newMovie);
-//			return movie.toString();
-//		}
-//
-//	}
 
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Movie> updateMovieById(@PathVariable("movieId") Long Id, @RequestBody Movie movie) {
