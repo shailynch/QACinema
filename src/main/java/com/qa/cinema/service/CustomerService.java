@@ -4,20 +4,19 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.qa.cinema.models.Customer;
 import com.qa.cinema.repo.CustomerRepo;
 
-@Component
+@Service
 public class CustomerService {
-	private Customer customer;
+
+	@Autowired
 	private CustomerRepo repo;
 
 	@Autowired
 	public CustomerService(CustomerRepo repo) {
-		super();
-		this.customer = new Customer();
 		this.repo = repo;
 	}
 
