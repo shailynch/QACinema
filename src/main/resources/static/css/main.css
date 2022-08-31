@@ -1,6 +1,7 @@
 body {
    min-height: 400px;
    margin-bottom: 350px;
+   background-color: #e6ffff;
 }
 .header {
     height: 310px;
