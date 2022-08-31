@@ -68,14 +68,8 @@ public class MovieServiceUnitTesting {
 		Movie newMovie = new Movie("Finding Paul", 190, "Barry Chuckle", "Kids", "20/08/2022", "18",
 				"Barry's search for his brother Paul", "https://picsum.photos/200");
 
-		System.out.println(newMovie);
-		System.out.println(validMovie);
-
 		Mockito.when(this.repo.findById(validMovie.getId())).thenReturn(Optional.of(validMovie));
 		this.service.updateMovie(newMovie, validMovie.getId());
-
-		System.out.println(newMovie);
-		System.out.println(validMovie);
 
 		Mockito.verify(this.repo, Mockito.times(1)).save(validMovie);
 		Mockito.verify(this.repo, Mockito.times(1)).findById(validMovie.getId());
