@@ -113,7 +113,7 @@ public class Movie {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id, ageRating, cast, description, genre, posterUrl, releaseDate, runtime, title);
+		return Objects.hash(ageRating, cast, description, genre, posterUrl, releaseDate, runtime, title);
 	}
 
 	@Override
@@ -125,11 +125,10 @@ public class Movie {
 		if (getClass() != obj.getClass())
 			return false;
 		Movie other = (Movie) obj;
-		return Objects.equals(Id, other.Id) && Objects.equals(ageRating, other.ageRating)
-				&& Objects.equals(cast, other.cast) && Objects.equals(description, other.description)
-				&& Objects.equals(genre, other.genre) && Objects.equals(posterUrl, other.posterUrl)
-				&& Objects.equals(releaseDate, other.releaseDate) && runtime == other.runtime
-				&& Objects.equals(title, other.title);
+		return Objects.equals(ageRating, other.ageRating) && Objects.equals(cast, other.cast)
+				&& Objects.equals(description, other.description) && Objects.equals(genre, other.genre)
+				&& Objects.equals(posterUrl, other.posterUrl) && Objects.equals(releaseDate, other.releaseDate)
+				&& runtime == other.runtime && Objects.equals(title, other.title);
 	}
 
 	public Movie() {

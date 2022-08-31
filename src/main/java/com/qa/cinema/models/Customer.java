@@ -82,8 +82,10 @@ public class Customer {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((dob == null) ? 0 : dob.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((mobile == null) ? 0 : mobile.hashCode());
 		return result;
 	}
 
@@ -101,15 +103,25 @@ public class Customer {
 				return false;
 		} else if (!getFirstName().equals(other.getFirstName()))
 			return false;
-		if (Id == null) {
-			if (other.Id != null)
-				return false;
-		} else if (!Id.equals(other.Id))
-			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
 				return false;
 		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (dob == null) {
+			if (other.dob != null)
+				return false;
+		} else if (!dob.equals(other.dob))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (mobile == null) {
+			if (other.mobile != null)
+				return false;
+		} else if (!mobile.equals(other.mobile))
 			return false;
 		return true;
 	}

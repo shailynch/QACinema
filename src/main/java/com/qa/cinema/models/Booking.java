@@ -62,7 +62,7 @@ public class Booking {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id, customerID, bookingDate, viewingID);
+		return Objects.hash(customerID, bookingDate, viewingID);
 	}
 
 	@Override
@@ -74,8 +74,8 @@ public class Booking {
 		if (getClass() != obj.getClass())
 			return false;
 		Booking other = (Booking) obj;
-		return Objects.equals(Id, other.Id) && Objects.equals(customerID, other.customerID)
-				&& Objects.equals(bookingDate, other.bookingDate) && Objects.equals(viewingID, other.viewingID);
+		return Objects.equals(customerID, other.customerID) && Objects.equals(bookingDate, other.bookingDate)
+				&& Objects.equals(viewingID, other.viewingID);
 	}
 
 	public Booking() {
