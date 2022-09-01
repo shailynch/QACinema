@@ -1,7 +1,7 @@
 body {
    min-height: 100px;
    margin-bottom: 350px;
-   background-color: #e6ffff;
+   background-color: #100811;
 }
 .header {
     height: 310px;
@@ -65,7 +65,7 @@ body {
   }
 
   footer {
-    background-color: #0e5f99;
+    background-color: #330033;
     color: #e6ffff;
     position: fixed;
   	bottom: 0;
@@ -74,7 +74,7 @@ body {
   }
   
   .mainFooter{
-    background-color: #0e5f99;
+    background-color: 	 #330033;
     color:#e6ffff;
   	width: 100%;
   }
@@ -117,4 +117,8 @@ main {
 /* selected link */
 .navlink a:active {
   color:#e6ffff;
+}
+
+header {
+	background-color:	 #330033;
 }
