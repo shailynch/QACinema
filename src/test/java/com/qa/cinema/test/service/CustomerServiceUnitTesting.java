@@ -53,7 +53,7 @@ public class CustomerServiceUnitTesting {
 		Customer validCustomer = new Customer(1L, "Barry", "Manilow", "28/04/1943", "barryM@mandy.com", "07123467521");
 
 		Mockito.when(this.repo.findById(validCustomer.getId())).thenReturn(Optional.of(validCustomer));
-		assertThat(this.service.readCustomer(validCustomer.getId())).isEqualTo(validCustomer.toString());
+		assertThat(this.service.readCustomer(validCustomer.getId())).isEqualTo(validCustomer);
 		Mockito.verify(this.repo, Mockito.times(1)).findById(validCustomer.getId());
 	}
 

@@ -3,6 +3,8 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.cinema.models.Customer;
-import com.qa.cinema.repo.CustomerRepo;
 import com.qa.cinema.service.CustomerService;
 
 @RestController
@@ -28,55 +29,40 @@ public class CustomerController {
 		this.service = service;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
+	@CrossOrigin
 	@GetMapping("/all")
-	List<Customer> all() {
+	public List<Customer> getAllCustomers() {
 		return service.readAll();
+	}
 
+	@CrossOrigin
+	@GetMapping("/{id}")
+	public Customer getCustomerById(@PathVariable Long id) {
+		return service.readCustomer(id);
 	}
 
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newCustomerForm(@RequestBody Customer customer) {
-		Customer newCustomer = customer;
-		service.addCustomer(newCustomer);
-		return customer.toString();
+	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
+		Customer createCustomer = service.addCustomer(customer);
+		return new ResponseEntity<Customer>(createCustomer, HttpStatus.CREATED);
 	}
 
 	@CrossOrigin
 	@PutMapping("/update/{id}")
-	public String updateCustomerForm(@PathVariable Long id, @RequestBody Customer customer) {
-		Customer existing;
-		try {
-			existing = CustomerRepo.find(id);
-			existing.setFirstName(customer.getFirstName());
-			existing.setLastName(customer.getLastName());
-			existing.setEmail(customer.getDob());
-			existing.setEmail(customer.getEmail());
-			existing.setEmail(customer.getMobile());
-			service.updateCustomer(existing, id);
+	public ResponseEntity<Customer> updateCustomerById(@PathVariable Long id, @RequestBody Customer customer) {
+		Customer updatedCustomer = this.service.updateCustomer(customer, id);
+		return new ResponseEntity<Customer>(updatedCustomer, HttpStatus.OK);
 
-			return customer.toString();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Customer newCustomer = customer;
-			service.addCustomer(newCustomer);
-			return customer.toString();
-		}
-
-	}
-
-	@GetMapping("/{id}")
-	String one(@PathVariable Long id) {
-
-		return service.readCustomer(id);
-//      .orElseThrow(() -> new CustomerNotFoundException(id));
 	}
 
 	@CrossOrigin
 	@DeleteMapping("/{id}")
-	void deleteCustomer(@PathVariable Long id) {
-		service.deleteByCustomerID(id);
+	public ResponseEntity<Boolean> deleteCustomer(@PathVariable Long id) {
+
+		Boolean deletedCustomer = service.deleteByCustomerID(id);
+
+		return (deletedCustomer) ? new ResponseEntity<Boolean>(HttpStatus.NO_CONTENT)
+				: new ResponseEntity<Boolean>(HttpStatus.NOT_FOUND);
 	}
 }
