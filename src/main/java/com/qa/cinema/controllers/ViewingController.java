@@ -3,11 +3,14 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,46 +29,33 @@ public class ViewingController {
 		this.service = service;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
 	@GetMapping("/all")
-	List<Viewing> all() {
+	public List<Viewing> getAllViewings() {
 		return service.readAll();
 
 	}
 
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newViewingForm(@RequestBody Viewing viewing) {
-		Viewing newViewing = viewing;
-		service.addViewing(newViewing);
-		return viewing.toString();
+	public ResponseEntity<Viewing> newViewingForm(@RequestBody Viewing viewing) {
+		Viewing createViewing = service.addViewing(viewing);
+		return new ResponseEntity<Viewing>(createViewing, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/{id}")
-	Viewing one(@PathVariable Long id) {
+	public Viewing readViewingById(@PathVariable Long id) {
 
 		return service.readViewing(id);
-//      .orElseThrow(() -> new ViewingNotFoundException(id));
 	}
 
-//	@PutMapping("/viewings/{id}")
-//	Viewing replaceViewing(@RequestBody Viewing newViewing, @PathVariable Long id) {
-//
-//		return service.readViewing(id).map(viewing -> {
-//			viewing.setFirstName(newViewing.getFirstName());
-//			viewing.setLastName(newViewing.getLastName());
-//			viewing.setEmail(newViewing.getEmail());
-//
-//			return repository.save(viewing);
-//		}).orElseGet(() -> {
-//			newViewing.setId(id);
-//			return repository.save(newViewing);
-//		});
-//	}
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Viewing> updateViewingById(@PathVariable("movieId") Long Id, @RequestBody Viewing viewing) {
+		Viewing updatedViewing = this.service.updateViewing(viewing, Id);
+		return new ResponseEntity<Viewing>(updatedViewing, HttpStatus.OK);
+	}
 
 	@DeleteMapping("/{id}")
-	void deleteViewing(@PathVariable Long id) {
-		service.deleteByViewingID(id);
+	public ResponseEntity<Boolean> deleteViewing(@PathVariable Long id) {
+		return new ResponseEntity<Boolean>(this.service.deleteByViewingID(id), HttpStatus.NO_CONTENT);
 	}
 }
