@@ -51,6 +51,21 @@ public class MovieControllerUnitTesting {
 	}
 
 	@Test
+	public void getMovieById() {
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+		List<Movie> movies = new ArrayList<>();
+		movies.add(validMovie);
+
+		Mockito.when(this.service.readMovie(validMovie.getId())).thenReturn(movies.get(0));
+
+		Movie value = movies.get(0);
+
+		assertThat(value).isEqualTo(controller.readMovieById(validMovie.getId()));
+
+		Mockito.verify(this.service, Mockito.times(1)).readMovie(validMovie.getId());
+	}
+
+	@Test
 	public void updateMovieById() {
 		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
 		List<Movie> movies = new ArrayList<>();
@@ -62,6 +77,19 @@ public class MovieControllerUnitTesting {
 		ResponseEntity<Movie> response = new ResponseEntity<Movie>(validMovie, HttpStatus.OK);
 		assertThat(response).isEqualTo(controller.updateMovieById(validMovie.getId(), updateMovie));
 		Mockito.verify(this.service, Mockito.times(1)).updateMovie(updateMovie, validMovie.getId());
+	}
+
+	@Test
+	public void deleteMovietest() {
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url");
+		List<Movie> movies = new ArrayList<>();
+		movies.add(validMovie);
+
+		Mockito.when(this.service.deleteByMovieID(validMovie.getId())).thenReturn(true);
+		ResponseEntity<Boolean> response = new ResponseEntity<Boolean>(true, HttpStatus.NO_CONTENT);
+		assertThat(response).isEqualTo(controller.deleteMovie(validMovie.getId()));
+		Mockito.verify(this.service, Mockito.times(1)).deleteByMovieID(validMovie.getId());
+
 	}
 
 }
