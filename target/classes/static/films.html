@@ -11,24 +11,33 @@
     
 </head> 
 <body>
-  <!-- header nav bar  -->
-<div class="topnav">
-    <a href="index.html" >QA Cinema</a> 
-    <a href="films.html"> Films</a>
-    <a href="screens.html"> Screens</a>
-    <!-- can be changed for graphic -->
-        <div class="topnav-right">
-            <!-- new customer register -->
-            <a href="newCustomerForm.html">register account</a>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          	<li><a href="index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
+          	<li><a href="films.html" class="nav-link px-2 text-white"> Films</a></li>
+			<li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+        	           <!-- new customer register -->
+            <a href="newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
             <!-- existing customer update -->
-            <a href="updateCustomerForm.html">update account</a>
+            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
             <!-- new booking  -->
-            <a href="#ß ">new booking</a>
+            <a href="#" class="nav-link px-2 text-white">bookings</a>
             <!-- update booking-->
-            <a href="#">update booking</a>
-        </div>
+        </ul>
+
+
       </div>
-    <section class="py-5 text-center container">
+    </div>
+  </header>    <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Films</h1>
@@ -200,7 +209,7 @@
             <div class="col-3 col-md-2 mb-3">
               <h5>QA Cinema</h5>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2">1 QA way london E1 2PL</li>
+                <li class="nav-item mb-2">3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN</li>
               </ul>
             </div>
       		<div class="col-3 col-md-2 mb-3">
@@ -214,7 +223,7 @@
             </div>
            <div class="col-4 col-md-2 mb-3">
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-muted">Contact Us</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
               </ul>
