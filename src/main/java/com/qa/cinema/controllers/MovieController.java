@@ -53,7 +53,7 @@ public class MovieController {
 	}
 
 	@GetMapping("/{id}")
-	Movie one(@PathVariable Long id) {
+	public Movie readMovieById(@PathVariable Long id) {
 
 		return service.readMovie(id);
 //      .orElseThrow(() -> new MovieNotFoundException(id));
@@ -66,7 +66,7 @@ public class MovieController {
 	}
 
 	@DeleteMapping("/{id}")
-	void deleteMovie(@PathVariable Long id) {
-		service.deleteByMovieID(id);
+	public ResponseEntity<Boolean> deleteMovie(@PathVariable Long id) {
+		return new ResponseEntity<Boolean>(this.service.deleteByMovieID(id), HttpStatus.NO_CONTENT);
 	}
 }
