@@ -3,11 +3,14 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,21 +32,20 @@ public class BookingController {
 	// Aggregate root
 	// tag::get-aggregate-root[]
 	@GetMapping("/all")
-	List<Booking> all() {
+	public List<Booking> getAllBookings() {
 		return service.readAll();
 
 	}
 
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newBookingForm(@RequestBody Booking booking) {
-		Booking newBooking = booking;
-		service.addBooking(newBooking);
-		return booking.toString();
+	public ResponseEntity<Booking> newBookingForm(@RequestBody Booking booking) {
+		Booking createBooking = service.addBooking(booking);
+		return new ResponseEntity<Booking>(createBooking, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/{id}")
-	Booking one(@PathVariable Long id) {
+	public Booking readBookingById(@PathVariable Long id) {
 
 		return service.readBooking(id);
 //      .orElseThrow(() -> new BookingNotFoundException(id));
@@ -64,8 +66,14 @@ public class BookingController {
 //		});
 //	}
 
+	@PutMapping("/bookings/{id}")
+	public ResponseEntity<Booking> updateBookingById(@PathVariable("bookingId") Long Id, @RequestBody Booking booking) {
+		Booking updateBooking = this.service.updateBooking(booking, Id);
+		return new ResponseEntity<Booking>(updateBooking, HttpStatus.OK);
+	}
+
 	@DeleteMapping("/{id}")
-	void deleteBooking(@PathVariable Long id) {
-		service.deleteByBookingID(id);
+	public ResponseEntity<Boolean> deleteBooking(@PathVariable Long id) {
+		return new ResponseEntity<Boolean>(this.service.deleteByBookingID(id), HttpStatus.NO_CONTENT);
 	}
 }
