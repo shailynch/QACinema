@@ -7,6 +7,7 @@
     <title>QA Cinema</title>    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -38,12 +39,42 @@
     </div>
   </header>
 		<main>
-			<div class="container text-center">
-				<h1 class="fw-light">Contact Us</h1>
+			<div class="container text-center" id="cinemaColour">
+				<h1>Contact Us</h1>
 				<p>
 					<strong> For urgent enquiries please call</strong>, alternatively please fill out this forma nd a member of our team will be in touch.
-				</p>
+				</p>	
 			</div>
+			<div id="cinemaColour">
+	<div class="row">
+        <div class="container col-md-6" id="extraPadding">
+            <form >
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" id="first_name" >
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" id="last_name">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" th:field="*{email}">
+                <label for="message" class="form-label">Message</label>
+                <input type="message" class="form-control" id="message">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <button type="submit" class="btn btn-primary" onclick="addCustomer()" >Submit</button>
+            </form>
+        </div>
+        <div class="container col-md-4" id="cinemaBackgroundColour">
+        	<h1>Contact </h1>
+        	<P>
+        		<h5>QA Cinema</h5>
+        		3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN
+        		<hr>
+        		<i class="fa fa-phone"> 01702000000 </i> Cinema Number 
+        		<hr>
+        		<i class="glyphicon glyphicon-envelope"> shai.lynch.sl@gmail.com</i>
+        		
+        	</P>
+        </div>
+       </div>
+    </div>
 		</main>
 		
 		 <footer class="py-5 mainFooter footer mt-auto">
@@ -66,7 +97,7 @@
             </div>
            <div class="col-4 col-md-2 mb-3">
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                <li class="nav-item mb-2"><a href="contactUs.html" class="nav-link p-0 text-muted">Contact Us</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
               </ul>
