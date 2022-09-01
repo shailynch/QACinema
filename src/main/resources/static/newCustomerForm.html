@@ -10,22 +10,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <!-- header nav bar  -->
-<div class="topnav">
-    <a href="index.html" >QA Cinema</a> 
-    <a href="films.html"> films</a>
-    <!-- can be changed for graphic -->
-        <div class="topnav-right">
-            <!-- new customer register -->
-            <a href="newCustomerForm.html">register account</a>
+ <header class="p-3 ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          	<li><a href="index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
+          	<li><a href="films.html" class="nav-link px-2 text-white"> Films</a></li>
+			<li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+        	           <!-- new customer register -->
+            <a href="newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
             <!-- existing customer update -->
-            <a href="updateCustomerForm.html">update account</a>
+            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
             <!-- new booking  -->
-            <a href="#ß ">new booking</a>
+            <a href="#" class="nav-link px-2 text-white">bookings</a>
             <!-- update booking-->
-            <a href="#">update booking</a>
-        </div>
+        </ul>
+
+
       </div>
+    </div>
+  </header>
     <div class="form bg-light">
         <div class="container">
             <form >
@@ -40,45 +51,49 @@
             </form>
         </div>
     </div>
-    <footer class="py-5 mainFooter footer mt-auto">
+     <footer class="py-5 mainFooter footer mt-auto">
       <div class="container ">
           <div class="row">
             <div class="col-3 col-md-2 mb-3">
               <h5>QA Cinema</h5>
               <ul class="nav flex-column">
+                <li class="nav-item mb-2">3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN</li>
+              </ul>
+            </div>
+      		<div class="col-3 col-md-2 mb-3">
+              <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
                 <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li> -->                 
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
-                <li class="nav-item mb-2">1 QA way london E1 2PL</li>
               </ul>
             </div>
-      
-           <div class="col-6 col-md-2 mb-3">
+           <div class="col-4 col-md-2 mb-3">
               <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
               </ul>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-4 col-md-2 mb-3">
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
+				<li class="nav-item mb-2"><a href="classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
+				<li class="nav-item mb-2"><a href="surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
+				<li class="nav-item mb-2"><a href="gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
+              </ul>
+            </div>
+             <div class="col-4 col-md-2 mb-3">
+             	<i class="fa fa-phone"> 01702000000 </i>Cinema Number 
               <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                   <p>&copy; 2022 Company, Inc. All rights reserved.</p>
                 </div>
+          	</div> 
           </div>
-              
-          </div>
-          <i class="fa fa-phone"> 01702000000 </i>
-              Cinema Number 
-              <!-- out of ours numb
-                  /+
-                  
-                  er -->
-              <i class="fa fa-clock-o"> 01702000000 </i>
-              Out of hours Number 
+
 	</div>    
-</footer>   
+</footer>
 <script src="./js/script.js"></script>
 <script src="./js/bootstrap.bundle.min.js"></script> 
 </body>
