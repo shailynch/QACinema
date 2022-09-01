@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Cinema</title>    
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/discussionBoard.css">
+    <link rel="stylesheet" href="css/thread.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -37,12 +37,19 @@
       </div>
     </div>
   </header>
-  
-  <div class="main">
-    <ol>
-
-    </ol>
-  </div>
+  <div class="top-bar">
+    <h1>
+        Discussion Board
+    </h1>
+</div>
+<div class="main">
+    <div class="header">
+    </div>
+    <textarea></textarea>
+    <button id="addComment">add comment</button>
+    <div class="comments">
+    </div>
+</div>
 
       <footer class="py-5 mainFooter footer mt-auto">
       <div class="container ">
@@ -50,8 +57,7 @@
             <div class="col-3 col-md-2 mb-3">
               <h5>QA Cinema</h5>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-                <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li> -->                 
+                <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>               
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
@@ -84,30 +90,64 @@
 	</div>    
 </footer>
   <script src="./js/data.js"></script>
+  <script src="./js/thread.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script>
-    console.log(threads);
-    let container = document.querySelector('ol');
-    for (let thread of threads) {
-        let html = `
-        <li class="row">
-            <a href="/src/main/resources/static/thread.html?${thread.id}">
-                <h4 class="title">
-                    ${thread.title}
-                </h4>
-                <div class="bottom">
-                    <p class="timestamp">
-                        ${new Date(thread.date).toLocaleString()}
+    let id = window.location.search.slice(1);
+    let thread = threads.find(t => t.id == id);
+    let header = document.querySelector('.header');
+    let headerHtml = `
+        <h4 class="title">
+            ${thread.title}
+        </h4>
+        <div class="bottom">
+            <p class="timestamp">
+                ${new Date(thread.date).toLocaleString()}
+            </p>
+            <p class="comment-count">
+                ${thread.comments.length} comments
+            </p>
+        </div>
+    `
+    header.insertAdjacentHTML('beforeend', headerHtml)
+
+    function addComment(comment) {
+        let commentHtml = `
+            <div class="comment">
+                <div class="top-comment">
+                    <p class="user">
+                        ${comment.author}
                     </p>
-                    <p class="comment-count">
-                        ${thread.comments.length} comments
+                    <p class="comment-ts">
+                        ${new Date(comment.date).toLocaleString()}
                     </p>
                 </div>
-            </a>
-        </li>
+                <div class="comment-content">
+                    ${comment.content}
+                </div>
+            </div>
         `
-        container.insertAdjacentHTML('beforeend', html);
+        comments.insertAdjacentHTML('beforeend', commentHtml);
     }
+
+    let comments = document.querySelector('.comments');
+    for (let comment of thread.comments) {
+        addComment(comment);
+    }
+
+    let btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        var txt = document.querySelector('textarea');
+        var comment = {
+            content: txt.value,
+            date: Date.now(),
+            author: 'Aaron'
+        }
+        addComment(comment);
+        txt.value = '';
+        thread.comments.push(comment);
+        localStorage.setItem('threads', JSON.stringify(threads));
+    })
 </script>
 </body>
 </html>

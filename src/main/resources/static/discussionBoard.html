@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Cinema</title>    
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/discussionBoard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -37,18 +37,12 @@
       </div>
     </div>
   </header>
-    <div class="form bg-light">
-        <div class="container">
-            <form>
-               This page provides customers with the means to discuss movies and their experiences at the cinema.
-				
-				Page appears in the primary navigation
-				Users can comment on movie related topics
-				Users can rate films that they have seen
-				Users’ posts should be moderated to ensure that inappropriate content is not displayed
-            </form>
-        </div>
-    </div>
+  
+  <div class="main">
+    <ol>
+
+    </ol>
+  </div>
 
       <footer class="py-5 mainFooter footer mt-auto">
       <div class="container ">
@@ -64,7 +58,7 @@
                 <li class="nav-item mb-2">1 QA way london E1 2PL</li>
               </ul>
             </div>
-      
+          
            <div class="col-6 col-md-2 mb-3">
               <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
@@ -89,7 +83,31 @@
               Out of hours Number 
 	</div>    
 </footer>
-  <script src="./js/script.js"></script>
+  <script src="./js/data.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
+  <script>
+    console.log(threads);
+    let container = document.querySelector('ol');
+    for (let thread of threads) {
+        let html = `
+        <li class="row">
+            <a href="/src/main/resources/static/thread.html?${thread.id}">
+                <h4 class="title">
+                    ${thread.title}
+                </h4>
+                <div class="bottom">
+                    <p class="timestamp">
+                        ${new Date(thread.date).toLocaleString()}
+                    </p>
+                    <p class="comment-count">
+                        ${thread.comments.length} comments
+                    </p>
+                </div>
+            </a>
+        </li>
+        `
+        container.insertAdjacentHTML('beforeend', html);
+    }
+</script>
 </body>
 </html>
