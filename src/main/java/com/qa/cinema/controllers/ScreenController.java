@@ -3,11 +3,14 @@ package com.qa.cinema.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,46 +29,39 @@ public class ScreenController {
 		this.service = service;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
+	@CrossOrigin
 	@GetMapping("/all")
-	List<Screen> all() {
+	public List<Screen> getAllScreens() {
 		return service.readAll();
+	}
 
+	@CrossOrigin
+	@GetMapping("/{id}")
+	public Screen getScreenById(@PathVariable Long id) {
+		return service.readScreen(id);
 	}
 
 	@CrossOrigin
 	@PostMapping("/add")
-	public String newScreenForm(@RequestBody Screen screen) {
-		Screen newScreen = screen;
-		service.addScreen(newScreen);
-		return screen.toString();
+	public ResponseEntity<Screen> addScreen(@RequestBody Screen screen) {
+		Screen createScreen = service.addScreen(screen);
+		return new ResponseEntity<Screen>(createScreen, HttpStatus.CREATED);
 	}
 
-	@GetMapping("/{id}")
-	Screen one(@PathVariable Long id) {
-
-		return service.readScreen(id);
-//      .orElseThrow(() -> new ScreenNotFoundException(id));
+	@CrossOrigin
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Screen> updateScreenById(@PathVariable Long id, @RequestBody Screen screen) {
+		Screen updatedScreen = this.service.updateScreen(screen, id);
+		return new ResponseEntity<Screen>(updatedScreen, HttpStatus.OK);
 	}
 
-//	@PutMapping("/screens/{id}")
-//	Screen replaceScreen(@RequestBody Screen newScreen, @PathVariable Long id) {
-//
-//		return service.readScreen(id).map(screen -> {
-//			screen.setFirstName(newScreen.getFirstName());
-//			screen.setLastName(newScreen.getLastName());
-//			screen.setEmail(newScreen.getEmail());
-//
-//			return repository.save(screen);
-//		}).orElseGet(() -> {
-//			newScreen.setId(id);
-//			return repository.save(newScreen);
-//		});
-//	}
-
+	@CrossOrigin
 	@DeleteMapping("/{id}")
-	void deleteScreen(@PathVariable Long id) {
-		service.deleteByScreenID(id);
+	public ResponseEntity<Boolean> deleteScreen(@PathVariable Long id) {
+
+		Boolean deletedScreen = service.deleteByScreenID(id);
+
+		return (deletedScreen) ? new ResponseEntity<Boolean>(HttpStatus.NO_CONTENT)
+				: new ResponseEntity<Boolean>(HttpStatus.NOT_FOUND);
 	}
 }
