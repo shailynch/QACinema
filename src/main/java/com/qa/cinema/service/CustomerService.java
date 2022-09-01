@@ -26,12 +26,12 @@ public class CustomerService {
 	}
 
 	// read
-	public String readCustomer(Long id) {
+	public Customer readCustomer(Long id) {
 		Customer customerCheck = repo.findById(id).get();
 		if (customerCheck != null) {
-			return customerCheck.toString();
+			return customerCheck;
 		} else {
-			return "not found";
+			return null;
 		}
 	}
 
