@@ -46,3 +46,20 @@ CREATE TABLE IF NOT EXISTS `qacinema`.`booking` (
     `booking_date` VARCHAR(10) NOT NULL,
     PRIMARY KEY (`id`)
 );
+
+create table forum_thread(
+    `thread_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `thread_title` VARCHAR (100),
+    `creation_time` DATETIME,
+    `thread_author` VARCHAR (100)
+    PRIMARY KEY ('thread_id')
+);
+
+create table forum_comments (
+    `comment_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `topic_id` INT(11) NOT NULL,
+    `comment_content` VARCHAR (400),
+    `comment_create_time` DATETIME,
+    `comment_author` VARCHAR(100)
+    PRIMARY KEY ('comment_id')
+);
