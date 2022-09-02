@@ -142,33 +142,29 @@ body {
   }
 
   .cinema-screen-placeholder {
-    border-radius: 1%;
+    border-radius: 2%;
     width: 100%;
     height: 225px;
-    margin-top: 2%;
+    margin-top: 4%;
   }
 
-
-  /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
 }
 
-/* Hide the images by default */
 .cinemaSlides1 .cinemaSlides2 .cinemaSlides3 .cinemaSlides4{
   display: none;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 60%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: #0e5f99;
+  color: #FFFFFF;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
@@ -176,13 +172,28 @@ body {
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
+.prev-seating,
+.next-seating {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #330033;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next, .next-seating{
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-.prev {
+.prev, .prev-seating{
   left: 0;
   border-radius: 3px 0 0 3px;
 }
