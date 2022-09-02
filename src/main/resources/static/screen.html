@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Cinema</title>    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/screens.css">
+    
+</head> 
+<body>
+  <header class="p-3 ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          	<li><a href="index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
+          	<li><a href="films.html" class="nav-link px-2 text-white"> Films</a></li>
+			      <li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+              </form>
+        	  <!-- new customer register -->
+            <a href="newCustomerForm.html" class="nav-link px-2 text-white">Register Account</a>
+            <!-- existing customer update -->
+            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">Update Account</a>
+            <!-- new booking  -->
+            <a href="#" class="nav-link px-2 text-white">Bookings</a>
+            <!-- update booking-->
+        </ul>
+      </div>
+    </div>
+  </header>
+    <section class="py-5 text-center container">
+    <div>
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1>QA Cinema Screens</h1>
+        <p class="lead text-muted">Take a browse of our screens and come down to see us</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-black">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <div class="container">
+              <div class="cinemaSlides1">
+                <img class="cinema-screen-placeholder" src="./images/Screens/0_DE_HMB_140219VueCinema.jpg" alt="Cinema screen with deluxe seating included">
+              </div>
+
+              <div class="cinemaSlides1">
+                <img class="cinema-screen-placeholder" src="./images/Screens/imgID69943187.jpg.gallery.jpg" alt="Cinema screen with deluxe seating included">
+              </div>
+
+              <div class="cinemaSlides1">
+                <img class="cinema-screen-placeholder" src="./images/Screens/interior-of-vue-cinema.jpg" alt="Cinema screen with deluxe seating included">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Our Deluxe Seating</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Available in Screens 1 & 2 Only</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <div class="container">
+              <div class="cinemaSlides2">
+                <img class="cinema-screen-placeholder" src="./images/Screens/Screen1-seating.png" alt="Seating plan thumbnail for Screen 1">
+              </div>
+
+              <div class="cinemaSlides2">
+                <img class="cinema-screen-placeholder" src="./images/Screens/Screen2-seating.png" alt="Seating plan thumbnail for Screen 2">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Our Deluxe Seating Plan</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Available in Screens 1 & 2 Only</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+
+              <div class="container">
+                <div class="cinemaSlides3">
+                  <img class="cinema-screen-placeholder" src="./images/Screens/interior-edit1.jpg" alt="Cinema screen with only standard seating">
+                </div>
+  
+                <div class="cinemaSlides3">
+                  <img class="cinema-screen-placeholder" src="./images/Screens/348s.jpg" alt="Close up of standard seats">
+                </div>
+
+                <div class="cinemaSlides3">
+                  <img class="cinema-screen-placeholder" src="./images/Screens/interior-edit2.jpg" alt="Cinema screen with only standard seating">
+                </div>
+  
+                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+              </div>
+            <div class="card-body">
+              <p class="card-text">Our Standard Seating</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Available in All Screens</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <div class="container">
+              <div class="cinemaSlides4">
+                <img class="cinema-screen-placeholder" src="./images/Screens/Screen3-seating.png" alt="Seating plan thumbnail for Screen 3">
+              </div>
+
+              <div class="cinemaSlides4">
+                <img class="cinema-screen-placeholder" src="./images/Screens/Screen4-seating.png" alt="Seating plan thumbnail for Screen 4">
+              </div>
+
+              <div class="cinemaSlides4">
+                <img class="cinema-screen-placeholder" src="./images/Screens/Screen5-seating.png" alt="Seating plan thumbnail for Screen 5">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Our Standard Seating Plan</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Screens 3, 4 & 5</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <br />
+  <br /> 
+
+  <footer class="py-5 mainFooter footer mt-auto">
+    <div class="container ">
+        <div class="row">
+          <div class="col-3 col-md-2 mb-3">
+            <h5>QA Cinema</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN</li>
+            </ul>
+          </div>
+        <div class="col-3 col-md-2 mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+            </ul>
+          </div>
+         <div class="col-4 col-md-2 mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-4 col-md-2 mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
+      <li class="nav-item mb-2"><a href="classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
+      <li class="nav-item mb-2"><a href="surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
+      <li class="nav-item mb-2"><a href="gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
+            </ul>
+          </div>
+           <div class="col-4 col-md-2 mb-3">
+             <i class="fa fa-phone"> 01702000000 </i> 
+            <br /> 
+            <span> Cinema Number </span>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p class="copywrite-text">&copy; 2022 Company, Inc. All rights reserved.</p>
+              </div>
+          </div> 
+        </div>
+    </div>   
+  </footer>
+
+  </body>
+    <script src="./js/script.js"></script>
+    <script src="./js/screens.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script> 
+</html>
