@@ -217,3 +217,79 @@ body {
 .movie-desc {
     font-size: 70%;
 }
+
+.poster-thumbnail {
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.deleteButton {
+  background: url("../images/DeleteButton.jpg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  
+}
+
+input[type=text], input[type=url], input[type=number] {
+  width: 80%;
+  color: #AB7D41;
+  background-color: #FDFAC3;
+}
+
+#exampleModalLabel {
+  margin-top: 0%;
+  padding-top: 0%;
+  color: #330033;
+}
+
+table {
+  margin: auto;
+  border-style: double;
+  border-color: #FDFAC3;
+  border-radius: 15%;
+  padding: 1%;
+  justify-content: center;
+  max-width: 90%;
+}
+
+th {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 140%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td {
+  padding-left: 30px;
+  font-size: 120%;
+  padding-right: 30px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #FDFAC3;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.add-film-button {
+  color: #330033;
+  background-color: #FFFFFF;
+  border-radius: 15%;
+  text-align: center;
+  vertical-align: middle;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.alert {
+  position: relative;
+}
