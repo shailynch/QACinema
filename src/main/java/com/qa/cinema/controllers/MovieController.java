@@ -29,21 +29,12 @@ public class MovieController {
 		this.service = service;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
+	@CrossOrigin
 	@GetMapping("/all")
 	public List<Movie> getAllMovies() {
 		return service.readAll();
 
 	}
-
-//	@CrossOrigin
-//	@PostMapping("/add")
-//	public String newMovieForm(@RequestBody Movie movie) {
-//		Movie newMovie = movie;
-//		service.addMovie(newMovie);
-//		return movie.toString();
-//	}
 
 	@CrossOrigin
 	@PostMapping("/add")
@@ -52,19 +43,20 @@ public class MovieController {
 		return new ResponseEntity<Movie>(createMovie, HttpStatus.CREATED);
 	}
 
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public Movie readMovieById(@PathVariable Long id) {
-
 		return service.readMovie(id);
-//      .orElseThrow(() -> new MovieNotFoundException(id));
 	}
 
+	@CrossOrigin
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Movie> updateMovieById(@PathVariable("movieId") Long Id, @RequestBody Movie movie) {
 		Movie updatedMovie = this.service.updateMovie(movie, Id);
 		return new ResponseEntity<Movie>(updatedMovie, HttpStatus.OK);
 	}
 
+	@CrossOrigin
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Boolean> deleteMovie(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.deleteByMovieID(id), HttpStatus.NO_CONTENT);
