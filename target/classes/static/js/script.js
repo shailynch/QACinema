@@ -44,33 +44,6 @@ const addCustomer = () => {
         .catch(err => console.error(`error ${err}`));
 };
 
-const addBooking = () => {
-    const petID = _booking_pet_id.value;
-    const customerID = _booking_customer_id.value;
-    const vetID = _booking_vet_id.value;
-    
-    let data = { 
-        "petID": petID, 
-        "vetID": vetID, 
-        "customerID": customerID 
-    } 
-
-    fetch(`${bookingURL}/add`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-        .then(response => response.json())
-        .then(model => {
-            console.log(model);
-            allFromCustomer();
-        })
-        .catch(err => console.error(`error ${err}`));
-
-};
-
 
 const updateCustomer = () => {
 	const _customer_id = document.querySelector("#id");
@@ -94,18 +67,19 @@ const updateCustomer = () => {
         "dob": customerDob,
         "mobile": customerMobile 
     } 
-
-    fetch(`${customerURL}/update/${data.id}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-        .then(response => response.json())
-        .then(model => {
-            console.log(model);
-            allFromCustomer();
-        })
-        .catch(err => console.error(`error ${err}`));
+    
+	fetch(`${customerURL}/update/${data.id}`, {
+	        method: "PUT",
+	        body: JSON.stringify(data),
+	        headers: {
+	            "Content-Type": "application/json"
+	        }
+	    })
+	        .then(response => response.json())
+	        .then(model => {
+	            console.log(model);
+	            allFromCustomer();
+	        })
+	        .catch(err => console.error(`error ${err}`));
+	    
  };
