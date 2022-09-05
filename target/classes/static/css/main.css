@@ -2,6 +2,7 @@ body {
    min-height: 100px;
    margin-bottom: 350px;
    background-color: #100811;
+    padding-top: 0px;
 }
 .header {
     height: 310px;
@@ -40,13 +41,22 @@ body {
   	bottom: 0;
   	width: 100%;
   	max-height: 350px;
+  	  	border-top: 10px;
+  	border-color: #100811;
   }
   
   .mainFooter{
     background-color: 	 #330033;
     color:#e6ffff;
   	width: 100%;
+	border: inherit;
+	border-bottom-width: 10px;
+
   }
+ 
+ .py-5{
+     border-bottom-width: 10px;
+ }
   
   .form{
   overflow: visible;
@@ -58,6 +68,8 @@ body {
 #cinemaBackgroundColour{
 	text-decoration:none;
 	background-color: #330033;
+	color:#e6ffff;
+	padding-bottom: 25px;
 }
 main {
 	overflow: show;
@@ -68,5 +80,12 @@ header {
 }
 
 #extraPadding{
+	padding:15px;
+}
+#footer {
+	    border-top-width: 10px;
+	
+}
+.extraPadding{
 	padding:15px;
 }
