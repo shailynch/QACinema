@@ -2,7 +2,7 @@ body {
    min-height: 100px;
    margin-bottom: 350px;
    background-color: #100811;
-   border:10px;
+    padding-top: 0px;
 }
 .header {
     height: 310px;
@@ -88,5 +88,4 @@ header {
 }
 .extraPadding{
 	padding:15px;
-}
 }
