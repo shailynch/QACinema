@@ -5,22 +5,25 @@ const readAllMovies = () => {
     fetch(`${movieURL}/movie/all`)
        .then(response => response.json())
        .then(model => model.forEach(e => {
+        
         main.innerHTML = '';
         console.log(e);
 
         function ageRating() {
             if(e.ageRating === "U"){
-                return "./images/Classification-Logos/U-class-dark/jpg"
+                return "./images/Classification-Logos/U-class-dark.jpg";
             } else if ( e.ageRating === "PG"){
                 return "./images/Classification-Logos/PG-class-dark.jpg";
-            } else if ( e.ageRating === "12" ||  e.ageRating === "12A"){
-                return "./images/Classification-Logos/12A-class-dark/jpg";
+            } else if ( e.ageRating === "12"){
+                return "./images/Classification-Logos/12A-class-dark.jpg";
+            } else if ( e.ageRating === "12A"){
+                return "./images/Classification-Logos/12A-class-dark.jpg";
             } else if ( e.ageRating === "15"){
-                return "./images/Classification-Logos/15-class-dark/jpg";
+                return "./images/Classification-Logos/15-class-dark.jpg";
             } else if ( e.ageRating === "18"){
-                return "./images/Classification-Logos/18-class-dark/jpg";
+                return "./images/Classification-Logos/18-class-dark.jpg";
             } else {
-                return "./images/Classification-Logos/R18-class-dark/jpg";
+                return "./images/Classification-Logos/R18-class-dark.jpg";
             };}
 
             const movieEl = document.createElement('div');
