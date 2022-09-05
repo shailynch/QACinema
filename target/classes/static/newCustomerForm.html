@@ -44,9 +44,13 @@
                 <input type="text" class="form-control" id="first_name" >
                 <label for="last_name">Last Name</label>
                 <input type="text" class="form-control" id="last_name" th:field="*{lastName}">
+                <label for="mobile">DOB</label>
+                <input type="text" class="form-control" id="dob" th:field="*{dob}">
+                <label for="mobile" class="form-label">Mobile Number</label>
+                <input type="text" class="form-control" id="mobile" th:field="*{mobile}">  
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" th:field="*{email}">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>         
                 <button type="submit" class="btn btn-primary" onclick="addCustomer()" >Submit</button>
             </form>
         </div>
