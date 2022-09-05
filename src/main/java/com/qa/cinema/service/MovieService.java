@@ -28,14 +28,10 @@ public class MovieService {
 	// read
 	public Movie readMovie(Long id) {
 		return repo.findById(id).get();
-		// .get returns null or the movie as the movie would be optional
-		// type check would be better
 	}
 
 	public List<Movie> readAll() {
 		return repo.allFromMovie();
-		// .get returns null or the movie as the movie would be optional
-		// type check would be better
 	}
 
 	// update - change to current movie and new movie
