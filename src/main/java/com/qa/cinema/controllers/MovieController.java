@@ -46,7 +46,6 @@ public class MovieController {
 	@CrossOrigin
 	@GetMapping("/{id}")
 	public Movie readMovieById(@PathVariable Long id) {
-
 		return service.readMovie(id);
 	}
 
