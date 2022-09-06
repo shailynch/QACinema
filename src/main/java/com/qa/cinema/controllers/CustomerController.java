@@ -57,7 +57,7 @@ public class CustomerController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteCustomer(@PathVariable Long id) {
 
 		Boolean deletedCustomer = service.deleteByCustomerID(id);

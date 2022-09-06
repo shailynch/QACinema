@@ -29,6 +29,7 @@ public class ViewingController {
 		this.service = service;
 	}
 
+	@CrossOrigin
 	@GetMapping("/all")
 	public List<Viewing> getAllViewings() {
 		return service.readAll();
@@ -42,19 +43,22 @@ public class ViewingController {
 		return new ResponseEntity<Viewing>(createViewing, HttpStatus.CREATED);
 	}
 
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public Viewing readViewingById(@PathVariable Long id) {
 
 		return service.readViewing(id);
 	}
 
+	@CrossOrigin
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Viewing> updateViewingById(@PathVariable("movieId") Long Id, @RequestBody Viewing viewing) {
 		Viewing updatedViewing = this.service.updateViewing(viewing, Id);
 		return new ResponseEntity<Viewing>(updatedViewing, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/{id}")
+	@CrossOrigin
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteViewing(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.deleteByViewingID(id), HttpStatus.NO_CONTENT);
 	}
