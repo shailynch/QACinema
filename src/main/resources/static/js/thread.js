@@ -59,7 +59,22 @@ const threadLoc = "http://localhost:8090"
 let comments = document.querySelector('.comments');
 let id = window.location.search.slice(1);
 let thread = threads.find(t => t.id == id);  
-  
+ let header = document.querySelector('.header');
+    let headerHtml = `
+        <h4 class="title">
+            ${thread.title}
+        </h4>
+        <div class="bottom">
+            <p class="timestamp">
+                ${new Date(thread.date).toLocaleString()}
+            </p>
+            <p class="comment-count">
+                ${thread.comments.length} comments
+            </p>
+        </div>
+    `
+    header.insertAdjacentHTML('beforeend', headerHtml)  
+    
      function addComment(comment){
 				let commentHtml = `
                <div class="comment">
@@ -81,7 +96,7 @@ let thread = threads.find(t => t.id == id);
 			}; 
 			  
 const readAllComments = () => {
-	fetch(`${threadLoc}/src/main/resources/static/thread.html${id}`)
+	fetch(`${threadLoc}/comments/${id}`)
 		.then(response => response.json())
 		.then(model => model.forEach(e => {
 			console.log(e);
@@ -105,18 +120,19 @@ const addNewComment = () => {
             thread.comments.push(comment);
             localStorage.setItem('threads', JSON.stringify(threads));
 	
-	fetch(`${threadLoc}/thread/add` , {
+	fetch(`${threadLoc}/comments/add` , {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify(comment)
+	
 	})
 	.then(res => res.json())
 	.then(data => console.log(data))
 	.catch(err => console.err(err))
-});
-		
+})};
+
 		
 readAllComments();	
 			

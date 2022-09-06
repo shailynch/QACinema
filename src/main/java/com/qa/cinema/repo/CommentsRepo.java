@@ -14,7 +14,7 @@ public interface CommentsRepo extends JpaRepository<Comments, Long> {
 	@Query(value = "SELECT * FROM COMMENTS", nativeQuery = true)
 	public List<Comments> allComments();
 
-	@Query(value = "SELECT * FROM FORUM_COMMENTS WHERE topic_id = ?1", nativeQuery = true)
-	public List<Comments> topicComments();
+	@Query(value = "SELECT * FROM comments WHERE topic_id = ?1", nativeQuery = true)
+	public List<Comments> topicComments(Long topic_id);
 
 }

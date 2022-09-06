@@ -30,8 +30,8 @@ public class CommentsService {
 	}
 
 	// read all comments
-	public List<Comments> readAllComments() {
-		return repo.allComments();
+	public List<Comments> readAllComments(Long topic_id) {
+		return repo.topicComments(topic_id);
 	}
 
 	// update comments

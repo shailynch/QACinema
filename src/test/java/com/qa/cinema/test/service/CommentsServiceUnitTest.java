@@ -68,12 +68,12 @@ public class CommentsServiceUnitTest {
 	}
 
 	@Test
-	public void readComments_validComment_Comments() {
+	public void readComments_validComment_Comments(Long topic_id) {
 		List<Comments> comments = new ArrayList<>();
 		comments.add(new Comments(1L, 1L, "content", "time", "author"));
-		Mockito.when(this.service.readAllComments()).thenReturn(comments);
-		assertEquals(comments, this.service.readAllComments());
-		Mockito.verify(this.repo, Mockito.times(1)).allComments();
+		Mockito.when(this.service.readAllComments(topic_id)).thenReturn(comments);
+		assertEquals(comments, this.service.readAllComments(topic_id));
+		Mockito.verify(this.repo, Mockito.times(1)).topicComments(topic_id);
 	}
 
 	@Test

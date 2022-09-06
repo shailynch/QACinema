@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.qa.cinema.models.Comments;
 import com.qa.cinema.service.CommentsService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/comments")
 public class CommentsController {
@@ -27,14 +28,14 @@ public class CommentsController {
 	}
 
 	// get all comments
-	@CrossOrigin
-	@GetMapping("/all")
-	public List<Comments> getAllComments() {
-		return service.readAllComments();
+
+	@GetMapping("/all{topic_id}")
+	public List<Comments> getAllComments(Long topic_id) {
+		return service.readAllComments(topic_id);
 	}
 
 	// add new comment
-	@CrossOrigin
+
 	@PostMapping("/add")
 	public ResponseEntity<Comments> newComment(@RequestBody Comments comment) {
 		Comments createComment = service.addComment(comment);
@@ -42,7 +43,7 @@ public class CommentsController {
 	}
 
 	// read Comment by Id
-	@CrossOrigin
+
 	@GetMapping("/{id}")
 	public Comments readCommentById(@PathVariable Long id) {
 		return service.readCommentById(id);
@@ -58,7 +59,6 @@ public class CommentsController {
 	}
 
 	// delete Comment by Id
-	@CrossOrigin
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Boolean> deleteComment(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.deleteCommentById(id), HttpStatus.NO_CONTENT);

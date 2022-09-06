@@ -40,13 +40,13 @@ public class CommentsControllerUnitTest {
 	}
 
 	@Test
-	public void getAllCommentsTest() {
+	public void getAllCommentsTest(Long topic_id) {
 		Comments validComment = new Comments(1L, 1L, "content", "time", "author");
 		List<Comments> comments = new ArrayList<>();
 		comments.add(validComment);
-		Mockito.when(this.service.readAllComments()).thenReturn(comments);
-		assertThat(comments).isEqualTo(controller.getAllComments());
-		Mockito.verify(this.service, Mockito.times(1)).readAllComments();
+		Mockito.when(this.service.readAllComments(topic_id)).thenReturn(comments);
+		assertThat(comments).isEqualTo(controller.getAllComments(topic_id));
+		Mockito.verify(this.service, Mockito.times(1)).readAllComments(topic_id);
 	}
 
 	@Test
