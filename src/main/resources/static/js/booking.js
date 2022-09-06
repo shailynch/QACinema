@@ -23,29 +23,66 @@
                 <label for="childSeats" class="col-2">How many child seats</label>
                 <label for="date" class="col-2">What date</label>
 				<label for="time" class="col-2">What Time?</label>                
-                <select id="films" name="films" onchange="checkFilm();" class="col-2">
-				    <option value="1">Volvo</option>
-				    <option value="2">Saab</option>
-				    <option value="3">Fiat</option>
-				    <option value="4">Audi</option>
+                <select id="films" name="films" onload="readFilms()"onchange="readViewings();" class="col-2">
+                	
 				  </select>
                	 <input type="text" class="col-2" id="id">
                	 <input type="number" class="col-2" id="adultSeats" >
                	 <input type="number" class="col-2" id="childSeats" 	>	
                	 <input type="date" id="bookingDate" name="bokingDate"value="${availibleDates()}" min="${availibleDates()}" max="${availibleDates()+30}" class="col-2">		
+                <select id="displayViewings" onload="readViewings()" class="col-2">
+				  </select>
                 <!-- <button type="submit" class="btn btn-primary" onclick="addCustomer()" >Submit</button> -->
 		`
 		availibleDates();
 	}
 	
 	makeBooking();
-	
-	const  checkFilm = () => {
-	    const films = document.getElementById("films");
-	    
-	    let selectedFilm = films.options[films.selectedIndex].value;
-	    window.alert(selectedFilm);
 	   
-	   }
-	   
+	   const readFilms = () => {
+		const filmURL = "http://localhost:8090/movie";
+	 let html = "  <option disabled selected value> -- select an option -- </option>";
+	fetch(`${filmURL}/all`)
+     .then((response) => {
+         if (response.status !== 200) {
+             console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
+             return;
+         }
+     response.json()
+     .then(movies => movies.forEach(movie => {
+		 html = html + `
+        <option value= ${movie.id} >${movie.title} </option>
+ 
+        `
+        document.getElementById("films").innerHTML = html;
+}))
+     .catch(err => console.error(`Fetch Error :-S ${err}`));
+     });
+}
+	   readFilms();
 
+const readViewings = () => {
+	const viewingURL = "http://localhost:8090/viewing";
+	const films = document.getElementById("films");
+	let selectedFilm = films.options[films.selectedIndex].value;
+	 let html = `<option>Pick a film</option>`;
+	fetch(`${viewingURL}/all`)
+     .then((response) => {
+         if (response.status !== 200) {
+             console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
+             return;
+         }
+     response.json()
+     .then(viewings => viewings.forEach(viewing => {
+		 if(viewing.movieID == selectedFilm){
+			html = html + `
+        <option value= ${viewing.id} >${viewing.startTime} </option>
+        `
+        document.getElementById("displayViewings").innerHTML = html;
+		}
+        
+}))
+     .catch(err => console.error(`Fetch Error :-S ${err}`));
+     });
+}
+readViewings();

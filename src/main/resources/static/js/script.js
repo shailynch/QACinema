@@ -103,3 +103,27 @@ const readCustomers = () => {
      });
 }
 readCustomers();
+
+const deleteCustomer= () => {
+	const _customer_id = document.querySelector("#id");
+
+	const customerID = _customer_id.value;
+    	
+    let data = { 
+		"id": customerID,
+    } 
+    
+	fetch(`${customerURL}/delete/${data.id}`, {
+	        method: "DELETE",
+	        body: JSON.stringify(data),
+	        headers: {
+	            "Content-Type": "application/json"
+	        }
+	    })
+	        .then(response => response.json())
+	        .then(model => {
+	            console.log(model);
+	            allFromCustomer();
+	        })
+	        .catch(err => console.error(`error ${err}`));
+}
