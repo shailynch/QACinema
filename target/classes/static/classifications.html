@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Cinema</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/classifications.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -25,11 +25,11 @@
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
         </form>
         	           <!-- new customer register -->
-            <a href="newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
+            <a href="newCustomerForm.html" class="nav-link px-2 text-white">Register Account</a>
             <!-- existing customer update -->
-            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
+            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">Update Account</a>
             <!-- new booking  -->
-            <a href="#" class="nav-link px-2 text-white">bookings</a>
+            <a href="#" class="nav-link px-2 text-white">Bookings</a>
             <!-- update booking-->
         </ul>
 
@@ -37,48 +37,306 @@
       </div>
     </div>
   </header>
-        <main>
-		<div class="container">
-			<h3 id="cinemaColour">Movie Classifications</h3> 
-			<p>
-				<strong>U Universal Suitable for all -</strong> 
-					A U film should be suitable for audiences aged four years and over, 
-					although it is impossible to predict what might upset any particular child.
-				<hr>
-				<strong>PG Parental Guidance</strong>
-					General viewing, but some scenes may be unsuitable for young children. 
-					A PG film should not unsettle a child aged around eight or older. 
-					Unaccompanied children of any age may watch, but parents are advised to consider 
-					whether the content may upset younger, or more sensitive, children.
-					
-				<hr>
-				<strong>12 / 12A Suitable for 12 years and over</strong>
-					Films classified 12A and video works classified 12 contain material that 
-					is not generally suitable for children aged under 12. No one younger than 
-					12 may see a 12A film in a cinema unless accompanied by an adult. Adults planning 
-					to take a child under 12 to view a 12A film should consider whether the film is suitable 
-					for that child. To help them decide, we recommend that they check the Ratings Info for that 
-					film in advance. No one younger than 12 may rent or buy a 12 rated video work.
-				<hr>
-				<strong>15 Suitable only for 15 years and over</strong>
-					No one younger than 15 may see a 15 film in a cinema. 
-					No one younger than 15 may rent or buy a 15 rated video work.
-				<hr>
-				<strong>18 Suitable only for adults</strong>
-					No one younger than 18 may see an 18 film in a cinema. No one younger than 18 
-					may rent or buy an 18 rated video work. Adults should be free to choose their own entertainment.
-				<hr>
-				<strong>R18 Suitable only for adults </strong>To be shown only in specially licensed cinemas, 
-				or supplied only in licensed sex shops, and to adults only.
-				 The R18 category is a special and legally-restricted classification primarily for 
-				 explicit works of consenting sex or strong fetish material involving adults. 
-				 Films may only be shown to adults in specially licensed cinemas, and video works may be supplied 
-				 to adults only in licensed sex shops. R18 video works may not be supplied by mail order.
-				<a href="https://www.bbfc.co.uk/about-classification/">- find more information here </a> 
-			</p>	    
-		</div>
-      </main>
-     <footer class="py-5 mainFooter footer mt-auto">
+    <main>
+		  <div class="container">
+			  <h3>Movie Classifications</h3> 
+     
+        <button class="accordion"><img class="film-classification" src="images/Classification-Logos/U-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Universal (U)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              U films should be set within a positive framework and should offer reassuring counterbalances to any violence, threat or horror. If a work is particularly suitable for pre-school children, this will be indicated in the Ratings Info.
+              <br />
+              <br />
+              <strong>Dangerous Behaviour</strong>
+              <br />
+              Potentially dangerous or anti-social behaviour which young children may copy must be clearly disapproved of. No emphasis on realistic or easily accessible weapons.
+              <br />
+              <br />
+              <strong>Discrimination</strong>
+              <br />
+              Discriminatory language or behaviour is unlikely to be acceptable unless clearly disapproved of
+              <br />
+              <br />
+              <strong>Drugs</strong>
+              <br />
+              References to illegal drugs or drug misuse must be infrequent and innocuous, or have a clear educational purpose or anti-drug message suitable for young children.
+              <br />
+              <br />
+              <strong>Language</strong>
+              <br />
+              Infrequent use only of very mild bad language.
+              <br />
+              <br />
+              <strong>Nudity</strong>
+              <br />
+              Occasional nudity, with no sexual context.
+              <br />
+              <br />
+              <strong>Sex</strong>
+              <br />
+              Only very mild sexual behaviour (for example, kissing) and references to such behaviour.
+              <br />
+              <br />
+              <strong>Threat and Horror</strong>
+              <br />
+              Scary or potentially unsettling sequences should be mild, brief and unlikely to cause undue anxiety to young children. The outcome should be reassuring.
+              <br />
+              <br />
+              <strong>Violence</strong>
+              <br />
+              Violence will generally be very mild. Mild violence may be acceptable if it is justified by context (for example, comedic, animated, wholly unrealistic).</p>
+          </div>
+
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/PG-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Parental Guidance (PG)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              General viewing, but some scenes may be unsuitable for young children. A PG film should not unsettle a child aged around eight or older. Unaccompanied children of any age may watch, but parents are advised to consider whether the content may upset younger, or more sensitive, children.
+              <br />
+              <br />
+              <strong>Dangerous Behaviour</strong>
+              <br />
+              No detail of potentially dangerous behaviour which young children are likely to copy, if that behaviour is presented as safe or fun. No glamorisation of realistic or easily accessible weapons such as knives. No focus on anti-social behaviour which young children are likely to copy.
+              <br />
+              <br />
+              <strong>Discrimination</strong>
+              <br />
+              Discriminatory language or behaviour is unlikely to be acceptable unless clearly disapproved of, or in an educational or historical context, or in a particularly dated work with no likely appeal to children. Discrimination by a character with whom children can readily identify is unlikely to be acceptable.
+              <br />
+              <br />
+              <strong>Drugs</strong>
+              <br />
+              References to illegal drugs or drug misuse must be innocuous or carry a suitable anti-drug message.
+              <br />
+              <br />
+              <strong>Language</strong>
+              <br />
+              Mild bad language only. Aggressive or very frequent use of mild bad language may result in a work being passed at a higher category.
+              <br />
+              <br />
+              <strong>Nudity</strong>
+              <br />
+              There may be nudity with no sexual context.
+              <br />
+              <br />
+              <strong>Sex</strong>
+              <br />
+              Sexual activity may be implied, but should be discreet and infrequent. Mild sex references and innuendo only.
+              <br />
+              <br />
+              <strong>Threat and Horror</strong>
+              <br />
+              Frightening sequences or situations where characters are in danger should not be prolonged or intense. Fantasy settings and comedy may be mitigating factors.
+              <br />
+              <br />
+              <strong>Violence</strong>
+              <br />
+              Violence will usually be mild. However there may be moderate violence, without detail, if justified by its context (for example, history, comedy or fantasy).</p>
+          </div>
+
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/12A-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Cinema Release Suitable for 12 Years & Over (12A)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              Films classified 12A and video works classified 12 contain material that is not generally suitable for children aged under 12. No one younger than 12 may see a 12A film in a cinema unless accompanied by an adult. Adults planning to take a child under 12 to view a 12A film should consider whether the film is suitable for that child. To help them decide, we recommend that they check the Ratings Info for that film in advance. No one younger than 12 may rent or buy a 12 rated video work.
+              <br />
+              <br />
+              <strong>Dangerous Behaviour</strong>
+              <br />
+              No promotion of potentially dangerous behaviour which children are likely to copy. No glamorisation of realistic or easily accessible weapons such as knives. No endorsement of anti-social behaviour.
+              <br />
+              <br />
+              <strong>Discrimination</strong>
+              <br />
+              Discriminatory language or behaviour must not be endorsed by the work as a whole. Aggressive discriminatory language or behaviour is unlikely to be acceptable unless clearly condemned.
+              <br />
+              <br />
+              <strong>Drugs</strong>
+              <br />
+              Misuse of drugs must be infrequent and should not be glamorised or give detailed instruction.
+              <br />
+              <br />
+              <strong>Language</strong>
+              <br />
+              There may be moderate bad language. Strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.
+              <br />
+              <br />
+              <strong>Nudity</strong>
+              <br />
+              There may be nudity, but in a sexual context it must be brief and discreet.
+              <br />
+              <br />
+              <strong>Sex</strong>
+              <br />
+              Sexual activity may be briefly and discreetly portrayed. Moderate sex references are permitted, but frequent crude references are unlikely to be acceptable.
+              <br />
+              <br />
+              <strong>Threat and Horror</strong>
+              <br />
+              There may be moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone should not be. Horror sequences should not be frequent or sustained.
+              <br />
+              <br />
+              <strong>Violence</strong>
+              <br />
+              There may be moderate violence but it should not dwell on detail. There should be no emphasis on injuries or blood, but occasional gory moments may be permitted if justified by the context.
+            </p>
+          </div>
+          
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/12-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Video Release Suitable for 12 Years & Over (12)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              Films classified 12A and video works classified 12 contain material that is not generally suitable for children aged under 12. No one younger than 12 may see a 12A film in a cinema unless accompanied by an adult. Adults planning to take a child under 12 to view a 12A film should consider whether the film is suitable for that child. To help them decide, we recommend that they check the Ratings Info for that film in advance. No one younger than 12 may rent or buy a 12 rated video work.
+              <br />
+              <br />
+              <strong>Dangerous Behaviour</strong>
+              <br />
+              No promotion of potentially dangerous behaviour which children are likely to copy. No glamorisation of realistic or easily accessible weapons such as knives. No endorsement of anti-social behaviour.
+              <br />
+              <br />
+              <strong>Discrimination</strong>
+              <br />
+              Discriminatory language or behaviour must not be endorsed by the work as a whole. Aggressive discriminatory language or behaviour is unlikely to be acceptable unless clearly condemned.
+              <br />
+              <br />
+              <strong>Drugs</strong>
+              <br />
+              Misuse of drugs must be infrequent and should not be glamorised or give detailed instruction.
+              <br />
+              <br />
+              <strong>Language</strong>
+              <br />
+              There may be moderate bad language. Strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.
+              <br />
+              <br />
+              <strong>Nudity</strong>
+              <br />
+              There may be nudity, but in a sexual context it must be brief and discreet.
+              <br />
+              <br />
+              <strong>Sex</strong>
+              <br />
+              Sexual activity may be briefly and discreetly portrayed. Moderate sex references are permitted, but frequent crude references are unlikely to be acceptable.
+              <br />
+              <br />
+              <strong>Threat and Horror</strong>
+              <br />
+              There may be moderate physical and psychological threat and horror sequences. Although some scenes may be disturbing, the overall tone should not be. Horror sequences should not be frequent or sustained.
+              <br />
+              <br />
+              <strong>Violence</strong>
+              <br />
+              There may be moderate violence but it should not dwell on detail. There should be no emphasis on injuries or blood, but occasional gory moments may be permitted if justified by the context.
+            </p>
+          </div>
+
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/15-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Suitable only for 15 Years & Over (15)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              No one younger than 15 may see a 15 film in a cinema. No one younger than 15 may rent or buy a 15 rated video work.
+              <br />
+              <br />
+              <strong>Dangerous Behaviour</strong>
+              <br />
+              Dangerous behaviour (for example, suicide, self-harming and asphyxiation) should not dwell on detail which could be copied. Whether the depiction of easily accessible weapons is acceptable will depend on factors such as realism, context and setting.
+              <br />
+              <br />
+              <strong>Discrimination</strong>
+              <br />
+              The work as a whole must not endorse discriminatory language or behaviour, although there may be racist, homophobic or other discriminatory themes and language.
+              <br />
+              <br />
+              <strong>Drugs</strong>
+              <br />
+              Drug taking may be shown but the work as a whole must not promote or encourage drug misuse (for example, through detailed instruction). The misuse of easily accessible and highly dangerous substances (for example, aerosols or solvents) is unlikely to be acceptable.
+              <br />
+              <br />
+              <strong>Language</strong>
+              <br />
+              There may be strong language. Very strong language may be permitted, depending on the manner in which it is used, who is using the language, its frequency within the work as a whole and any special contextual justification.
+              <br />
+              <br />
+              <strong>Nudity</strong>
+              <br />
+              There are no constraints on nudity in a non-sexual or educational context. Sexual nudity may be permitted but strong detail is likely to be brief or presented in a comic context.
+              <br />
+              <br />
+              <strong>Sex</strong>
+              <br />
+              Sexual activity may be portrayed, but usually without strong detail. There may be strong verbal references to sexual behaviour. Repeated very strong references, particularly those using pornographic language, are unlikely to be acceptable. Works whose primary purpose is sexual arousal are unacceptable.
+              <br />
+              <br />
+              <strong>Sexual Violence & Sexual Threat</strong>
+              <br />
+              There may be strong verbal references to sexual violence but any depiction of the stronger forms of sexual violence, including rape, must not be detailed or prolonged. A strong and sustained focus on sexual threat is unacceptable.
+              <br />
+              <br />
+              <strong>Threat and Horror</strong>
+              <br />
+              There may be strong threat and horror. A sustained focus on sadistic threat is unlikely to be acceptable.
+              <br />
+              <br />
+              <strong>Violence</strong>
+              <br />
+              Violence may be strong but should not dwell on the infliction of pain or injury. The strongest gory images are unlikely to be acceptable. Strong sadistic violence is also unlikely to be acceptable.</p>
+          </div>
+
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/18-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  Suitable Only for Adults (18)</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              No one younger than 18 may see an 18 film in a cinema. No one younger than 18 may rent or buy an 18 rated video work. Adults should be free to choose their own entertainment.
+              <br />
+              <br />
+              Exceptions are most likely in the following areas:
+              <ul>
+              <li>Where the material is in breach of the criminal law, or has been created through the commission of a criminal offence.</li>
+              
+              <li>Where material or treatment appears to us to risk harm to individuals or, through their behaviour, to society. For example, the detailed portrayal of violent or dangerous acts, or of illegal drug use, which may cause harm to public health or morals. This may include portrayals of sadistic violence, rape or other non-consensual sexually violent behaviour which make this violence look appealing; reinforce the suggestion that victims enjoy rape or other non-consensual sexually violent behaviour; or which invite viewer complicity in rape, other non-consensual sexually violent behaviour or other harmful violent activities.</li>
+              
+              <li>Where there are more explicit images of sexual activity in the context of a sex work (see right) In the case of video works, which may be more accessible to younger viewers, intervention may be more frequent than for cinema films.</li>
+              </ul>
+              <br />
+              <br />
+              <p class="accordian-text">
+              <strong>Sex Works at 18</strong>
+              <br />
+              <br />
+              Adults should be free to choose their own entertainment. Exceptions are most likely in the following areas:
+              <br />
+              Sex works are works whose primary purpose is sexual arousal or stimulation. Sex works containing only material which may be simulated are generally passed 18. Sex works containing clear images of real sex, strong fetish material, sexually explicit animated images, or other very strong sexual images will be confined to the R18 category. Material which is unacceptable in a sex work at R18 is also unacceptable in a sex work at 18.
+              </p>
+              </p>
+          </div>
+
+          <button class="accordion"><img class="film-classification" src="images/Classification-Logos/R18-class.jpg" alt="British Film Universal classification logo"><strong class="class-title">  To Be Shown Only in Specially Licensed Cinemas and to Adults Only</strong></button>
+          <div class="panel">
+            <p class="accordian-text">
+              <br />
+              The R18 category is a special and legally-restricted classification primarily for explicit works of consenting sex or strong fetish material involving adults. Films may only be shown to adults in specially licensed cinemas, and video works may be supplied to adults only in licensed sex shops. R18 video works may not be supplied by mail order.
+              <br />
+              <br />
+              <strong>Searching for R18 titles</strong>
+              <br />
+              R18 titles are filtered out from the main public search as they can have explicit and/or offensive titles. Details of R18 works will only appear if you 'enable adult content' using the advanced search option. You'll also be prompted to enter a date of birth.
+              <br />
+            </p>
+          </div>
+          <br />
+          <div>
+            For More Information on Classifications Please Visit: <a class="BBFC-link" href="https://www.bbfc.co.uk/" target="_blank">The British Board of Film Classifications</a>
+          </div>
+
+
+		  </div>
+    </main>
+
+
+    <br />
+    <br /> 
+    <footer class="py-5 mainFooter footer mt-auto">
       <div class="container ">
           <div class="row">
             <div class="col-3 col-md-2 mb-3">
@@ -112,16 +370,18 @@
               </ul>
             </div>
              <div class="col-4 col-md-2 mb-3">
-             	<i class="fa fa-phone"> 01702000000 </i>Cinema Number 
+             	<i class="fa fa-phone"> 01702000000 </i> 
+              <br /> 
+              <span> Cinema Number </span>
               <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                  <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+                  <p class="copywrite-text">&copy; 2022 Company, Inc. All rights reserved.</p>
                 </div>
           	</div> 
           </div>
-
-	</div>    
-</footer>
-<script src="./js/script.js"></script>
-<script src="./js/bootstrap.bundle.min.js"></script> 
-</body>
+	    </div>   
+    </footer>
+  </body>
+    <script src="./js/script.js"></script>
+    <script src="./js/classifications.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script> 
 </html>

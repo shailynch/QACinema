@@ -29,8 +29,7 @@ public class BookingController {
 		this.service = service;
 	}
 
-	// Aggregate root
-	// tag::get-aggregate-root[]
+	@CrossOrigin
 	@GetMapping("/all")
 	public List<Booking> getAllBookings() {
 		return service.readAll();
@@ -44,35 +43,22 @@ public class BookingController {
 		return new ResponseEntity<Booking>(createBooking, HttpStatus.CREATED);
 	}
 
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public Booking readBookingById(@PathVariable Long id) {
 
 		return service.readBooking(id);
-//      .orElseThrow(() -> new BookingNotFoundException(id));
 	}
 
-//	@PutMapping("/bookings/{id}")
-//	Booking replaceBooking(@RequestBody Booking newBooking, @PathVariable Long id) {
-//
-//		return service.readBooking(id).map(booking -> {
-//			booking.setFirstName(newBooking.getFirstName());
-//			booking.setLastName(newBooking.getLastName());
-//			booking.setEmail(newBooking.getEmail());
-//
-//			return repository.save(booking);
-//		}).orElseGet(() -> {
-//			newBooking.setId(id);
-//			return repository.save(newBooking);
-//		});
-//	}
-
+	@CrossOrigin
 	@PutMapping("/bookings/{id}")
 	public ResponseEntity<Booking> updateBookingById(@PathVariable("bookingId") Long Id, @RequestBody Booking booking) {
 		Booking updateBooking = this.service.updateBooking(booking, Id);
 		return new ResponseEntity<Booking>(updateBooking, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/{id}")
+	@CrossOrigin
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteBooking(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.deleteByBookingID(id), HttpStatus.NO_CONTENT);
 	}

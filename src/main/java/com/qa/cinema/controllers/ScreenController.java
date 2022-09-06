@@ -56,7 +56,7 @@ public class ScreenController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Boolean> deleteScreen(@PathVariable Long id) {
 
 		Boolean deletedScreen = service.deleteByScreenID(id);
