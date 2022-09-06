@@ -50,7 +50,16 @@ public class MovieService {
 			return repo.save(oldMovie);
 		}
 		return null;
+	}
 
+	public Movie newReleaseMovie(Movie newReleaseMovie, Long id) {
+		Optional<Movie> currentMovie = this.repo.findById(id);
+		if (currentMovie.get() instanceof Movie) {
+			Movie oldMovie = currentMovie.get();
+			oldMovie.setNewRelease(newReleaseMovie.getNewRelease());
+			return repo.save(newReleaseMovie);
+		}
+		return null;
 	}
 
 	// delete
