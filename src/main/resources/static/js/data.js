@@ -218,35 +218,3 @@ if (localStorage && localStorage.getItem('threads')) {
     threads = defaultThreads;
     localStorage.setItem('threads', JSON.stringify(defaultThreads));
 }
-
-// function clearStorage(){
-//     let session = sessionStorage.getItem('threads');
-//     if (session == null) {
-//         localStorage.removeItem('threads');
-//     }
-//     sessionStorage.getItem('threads');
-//}
-
-function updateStorage(){
-    let session = sessionStorage.getItem('threads');
-    if (session == null) {
-        threads = defaultThreads;
-        localStorage.setItem('threads', JSON.stringify(defaultThreads));
-    }
-    sessionStorage.getItem('threads');
-}
-
-function checkUpdate(){
-let existing = JSON.parse(localStorage.getItem('threads'));
-if(existing == null) existing = [];
-localStorage.setItem('threads', JSON.stringify(defaultThreads));
-existing.push('threads');
-localStorage.setItem('newThreads', JSON.stringify(defaultThreads));
-}
-
-
-if(localStorage.length < defaultThreads.length){
-    
-}
-
-window.addEventListener('load', checkUpdate);

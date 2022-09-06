@@ -27,6 +27,7 @@ public class CommentsController {
 	}
 
 	// get all comments
+	@CrossOrigin
 	@GetMapping("/all")
 	public List<Comments> getAllComments() {
 		return service.readAllComments();
@@ -41,12 +42,14 @@ public class CommentsController {
 	}
 
 	// read Comment by Id
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public Comments readCommentById(@PathVariable Long id) {
 		return service.readCommentById(id);
 	}
 
 	// update Comment by ID
+	@CrossOrigin
 	public ResponseEntity<Comments> updateCommentsById(@PathVariable("comment_id") Long Id,
 			@RequestBody Comments comment) {
 		Comments updateComment = this.service.updateComment(comment, Id);
@@ -55,6 +58,7 @@ public class CommentsController {
 	}
 
 	// delete Comment by Id
+	@CrossOrigin
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Boolean> deleteComment(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.deleteCommentById(id), HttpStatus.NO_CONTENT);

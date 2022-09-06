@@ -11,7 +11,7 @@ import com.qa.cinema.models.Comments;
 @Repository
 public interface CommentsRepo extends JpaRepository<Comments, Long> {
 
-	@Query(value = "SELECT * FROM FORUM_COMMENTS", nativeQuery = true)
+	@Query(value = "SELECT * FROM COMMENTS", nativeQuery = true)
 	public List<Comments> allComments();
 
 	@Query(value = "SELECT * FROM FORUM_COMMENTS WHERE topic_id = ?1", nativeQuery = true)
