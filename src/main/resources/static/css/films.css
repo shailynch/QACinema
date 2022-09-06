@@ -233,19 +233,34 @@ body {
   background-size: contain;
   width: 30px;
   height: 30px;
-  
+}
+
+.editButton {
+  background: url("../images/icons8-edit-32.png");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
 }
 
 input[type=text], input[type=url], input[type=number] {
-  width: 80%;
-  color: #AB7D41;
-  background-color: #FDFAC3;
+  width: 90%;
+  background-color: #FFFFFF;
+  color: #330033;
+  border-radius: 0%;
 }
 
 #exampleModalLabel {
   margin-top: 0%;
   padding-top: 0%;
-  color: #330033;
+  color: #FFFFFF;
+  background-color: #330033;
+}
+
+.modal-content {
+  background-color: #330033;
+  color: #FFFFFF;
 }
 
 table {
