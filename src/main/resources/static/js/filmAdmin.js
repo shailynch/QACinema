@@ -29,6 +29,7 @@ const readAllFilms = () => {
         let newCell6 = newRow.insertCell(6);
         let newCell7 = newRow.insertCell(7);
         let newCell8 = newRow.insertCell(8);
+        let newCell9 = newRow.insertCell(9);
 
         let newText = document.createTextNode(e.title);
         let newText2 = document.createTextNode(e.ageRating);
@@ -37,12 +38,14 @@ const readAllFilms = () => {
         let newText5 = document.createTextNode(e.cast);
         let newText6 = document.createTextNode(e.runtime);
         let newText7 = document.createTextNode(e.description);
+        let checkbox = document.createElement("input");
+        checkbox.className = "newReleaseCheckbox";
+        checkbox.type = "button";
     
         //Delete A Film from Database
         let deleteButton = document.createElement("button");
         deleteButton.type = "button";
         deleteButton.className = "deleteButton";
-    
         const deleteFilm = () => {
             fetch(`${movieURL}/movie/delete/${e.id}`, {
                 method: "DELETE",
@@ -58,8 +61,99 @@ const readAllFilms = () => {
         }
     
         deleteButton.addEventListener("click", deleteFilm);
-        
 
+
+        //Edit a Film
+        // const updateFilm = () => {
+        //     let title = filmTitleEl.value;
+        //     let cast = castEl.value;
+        //     let releaseDate = releaseDateEl.value;
+        //     let genre = genreEl.value;
+        //     let posterUrl = posterEl.value;
+        //     let ageRating = ageRatingEl.value;
+        //     let runtime = runtimeEl.value;
+        //     let description = descriptionEl.value;
+
+        //     const film = {
+        //         'title' : title,
+        //         'cast' : cast,
+        //         'releaseDate' : releaseDate,
+        //         'genre' : genre,
+        //         'posterUrl' : posterUrl,
+        //         'ageRating' : ageRating,
+        //         'runtime' : runtime,
+        //         'description' : description,
+        //         }
+        //         console.log(e)
+        //     fetch(`${movieURL}/movie/update/${e.id}`, {
+        //         method: "PUT",
+        //         body: JSON.stringify(film),
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         }
+        //     }).then(response => response.json())
+        //     .then(model => {
+        //         // document.location.reload(true)
+        //         console.log(model);
+        //     })
+        //     .catch(err => console.error(`error ${err}`))
+        // }
+
+        // const editButton = document.createElement("button");
+        // editButton.type = "button";
+        // editButton.className = "editButton";
+        // editButton.addEventListener("click", updateFilm);
+
+        //Add Film to New Releases
+        
+        const addToNewReleases = () => {
+            if (e.newRelease === false){
+
+
+
+            const film = {
+                'newRelease' : true,
+            };
+                console.log(e.newRelease)
+            fetch(`${movieURL}/movie/update/${e.id}/newRelease`, {
+                method: "PATCH",
+                body: JSON.stringify(film),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(response => response.json())
+            .then(model => {
+                document.location.reload(true)
+                console.log(model);
+            })
+            .catch(err => console.error(`error ${err}`))
+        } else {
+            const film = {
+                'newRelease' : false,
+            }
+            fetch(`${movieURL}/movie/update/${e.id}/newRelease`, {
+                method: "PATCH",
+                body: JSON.stringify(film),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(response => response.json())
+            .then(model => {
+                document.location.reload(true)
+                console.log(model);
+            })
+            .catch(err => console.error(`error ${err}`))
+        }
+        }
+        
+        checkbox.addEventListener("click", addToNewReleases);
+
+        if (e.newRelease === true) {
+            // checkbox.style.backgroundColor = 'green';
+            checkbox.className = 'isNew';
+        } else {
+            checkbox.className = 'isNotNew';
+        }
         
         const posterThumbnail = document.createElement("img");
         posterThumbnail.className = "poster-thumbnail";
@@ -75,7 +169,8 @@ const readAllFilms = () => {
         newCell5.appendChild(newText5);
         newCell6.appendChild(newText6);
         newCell7.appendChild(newText7);
-        newCell8.appendChild(deleteButton);
+        newCell8.appendChild(checkbox);
+        newCell9.appendChild(deleteButton);
     
         
       }

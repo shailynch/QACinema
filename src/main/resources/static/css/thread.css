@@ -1,0 +1,67 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h4, ol {
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ textarea {
+    width: 40%;
+    height: 100px;
+    background-color: gray;
+}
+
+.top-bar {
+    padding: 0 40px;
+}
+
+.top-bar h1{
+    color: #830c83;
+    text-align: center;
+}
+.main {
+    background-color: #100611;
+    padding: 10px 50px;
+}
+.comments {
+    margin: 40px 0;
+    color: #04AA6D;
+}
+.comment {
+    margin: 10px 0;
+}
+.row {
+    padding: 5px 0;
+}
+.bottom, .top-comment {
+    display: flex;
+    color: rgb(87, 158, 216);
+    font-size: 12px;
+}
+.timestamp {
+    padding-right: 10px;
+}
+.comment-ts {
+    padding-left: 10px;
+}
+
+#addcomment {
+    display: block;
+    margin: 10px 0;
+}
+
+.title{
+    color: #0e5f99;
+}
+
+#commentHeader{
+  height: 80px;
+}
+
+

@@ -2,12 +2,6 @@
 const customerURL = "http://localhost:8090/customer";
 
 
-const bookingURL = "http://localhost:8090/booking";
-const _booking_customer_id = document.querySelector("#booking_customer_id");
-const _booking_vet_id = document.querySelector("#booking_viewing_id");
-const _booking_pet_id = document.querySelector("#booking_date_id");
-
-
 const addCustomer = () => {
 	const _first_name = document.querySelector("#first_name");
 	const _last_name = document.querySelector("#last_name");
@@ -83,3 +77,53 @@ const updateCustomer = () => {
 	        .catch(err => console.error(`error ${err}`));
 	    
  };
+ 
+const readCustomers = () => {
+	 let html = " ";
+	fetch(`${customerURL}/all`)
+     .then((response) => {
+         if (response.status !== 200) {
+             console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
+             return;
+         }
+     response.json()
+     .then(customers => customers.forEach(customer => {
+		 html = html + `
+        <li class="row">
+                <p>
+                   First Name: ${customer.firstName}
+                   Last Name: ${customer.lastName}
+                   ID: ${customer.id}
+                </p>
+        </li>
+        `
+        document.getElementById("displayCustomers").innerHTML = html;
+}))
+     .catch(err => console.error(`Fetch Error :-S ${err}`));
+     });
+}
+readCustomers();
+
+const deleteCustomer= () => {
+	const _customer_id = document.querySelector("#id");
+
+	const customerID = _customer_id.value;
+    	
+    let data = { 
+		"id": customerID,
+    } 
+    
+	fetch(`${customerURL}/delete/${data.id}`, {
+	        method: "DELETE",
+	        body: JSON.stringify(data),
+	        headers: {
+	            "Content-Type": "application/json"
+	        }
+	    })
+	        .then(response => response.json())
+	        .then(model => {
+	            console.log(model);
+	            allFromCustomer();
+	        })
+	        .catch(err => console.error(`error ${err}`));
+}

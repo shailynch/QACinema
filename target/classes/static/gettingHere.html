@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Cinema</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/gettinghere.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -38,25 +39,28 @@
     </div>
   </header>
       <main>
+        <h3 id="cinemaColour">Getting Here</h3> 
+        <h4 id="gettinghereH4">Public Transport Links</h4>
 		<div class="container">
-			<h3 id="cinemaColour">Getting Here</h3> 
-			<p>
-				<hr>
-				<h4>Public Transport Links</h4> 
-					<h6>Our closest stations are Tower Hill, Fenchurch Street and London Bridge</h6>
-					<h6>We are a 2 minute walk from Tower Hill / Tower Gateway Station (Stop TE), London EC3N 4DX,  
-						Where buses 42,78,100 and 343 stop.
-					</h6>
-					<h6>We are a 2 minute walk from Tower Hill / Tower Gateway Station (Stop TE), London EC3N 4DX,  
-						Where buses 42,78,100 and 343 stop.
-					</h6>
-					<img alt="map of train links" src="/images/trainLinks.jpg" style="width:350px">
-					<img alt="map of train links" src="/images/busStop.png" style="width:350px">
-					<img alt="map of train links" src="/images/busStop.png" style="width:350px">
-					<br>				
-				<hr>
-			</p>	
+			
+			
+				 
+        <div id="trainStations">
+					<h6 id="trainH6">Our closest stations are Tower Hill, Fenchurch Street and London Bridge</h6>
+          <img alt="map of train links" src="./images/trainLinks.jpg" style="width:350px">
+        </div>
+
+        <div id="busStops">
+					<h6 id="busH6">We are a 2 minute walk from Tower Hill / Tower Gateway Station (Stop TE), London EC3N 4DX,  Where buses 42,78,100 and 343 stop.</h6>
+          <img alt="map of train links" src="./images/busStop.png" style="width:350px">
+        </div>
+					
+				
+				
 		</div>
+    <div id="googlemap">
+    <iframe title="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.310750334873!2d-0.07527325135893725!3d51.507514690883944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876034903d87ca7%3A0xee9b05e760a217f7!2sInternational%20House%2C%201%20St%20Katharine&#39;s%20Way%2C%20London%20E1W%201YL!5e0!3m2!1sen!2suk!4v1662547481599!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
       </main>
      <footer class="py-5 mainFooter footer mt-auto">
       <div class="container ">
@@ -70,17 +74,8 @@
       		<div class="col-3 col-md-2 mb-3">
               <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-                <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li> -->                 
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
                 <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
-              </ul>
-            </div>
-           <div class="col-4 col-md-2 mb-3">
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
+                <li class="nav-item mb-2"><a href="contactUs.html" class="nav-link p-0 text-muted">Contact Us</a></li>
               </ul>
             </div>
             <div class="col-4 col-md-2 mb-3">
