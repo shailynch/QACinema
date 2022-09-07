@@ -52,8 +52,8 @@ public class ViewingController {
 
 	@CrossOrigin
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Viewing> updateViewingById(@PathVariable("movieId") Long Id, @RequestBody Viewing viewing) {
-		Viewing updatedViewing = this.service.updateViewing(viewing, Id);
+	public ResponseEntity<Viewing> updateViewingById(@PathVariable Long id, @RequestBody Viewing viewing) {
+		Viewing updatedViewing = this.service.updateViewing(viewing, id);
 		return new ResponseEntity<Viewing>(updatedViewing, HttpStatus.OK);
 	}
 

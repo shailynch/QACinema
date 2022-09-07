@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Cinema</title>    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -18,18 +18,18 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          	<li><a href="index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
-          	<li><a href="films.html" class="nav-link px-2 text-white"> Films</a></li>
-			<li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+          	<li><a href="../index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
+          	<li><a href="../films.html" class="nav-link px-2 text-white"> Films</a></li>
+			<li><a href="../screen.html" class="nav-link px-2 text-white"> Screens</a></li>
 			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
         </form>
         	           <!-- new customer register -->
-            <a href="newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
+            <a href="../newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
             <!-- existing customer update -->
-            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
+            <a href="../updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
             <!-- new booking  -->
-            <a href="#" class="nav-link px-2 text-white">bookings</a>
+            <a href="../bookings.html" class="nav-link px-2 text-white">bookings</a>
             <!-- update booking-->
         </ul>
 
@@ -41,6 +41,13 @@
         <div>
 			<ul = onload="readCustomers()" id="displayCustomers" class="customers">
 			</ul>
+        </div>
+        <div>
+        <form id="deleteCustomer">
+        	<label for="id">Customer ID</label>
+                <input type="text" class="" id="id" >
+                <button type="submit" class="btn btn-primary" onclick="deleteCustomer()" >Submit</button>
+        </form>
         </div>
     </div>
      <footer class="py-5 mainFooter footer mt-auto">
@@ -63,17 +70,17 @@
             </div>
            <div class="col-4 col-md-2 mb-3">
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                <li class="nav-item mb-2"><a href="../contactUs.html" class="nav-link p-0 text-muted">Contact Us</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
               </ul>
             </div>
             <div class="col-4 col-md-2 mb-3">
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
-				<li class="nav-item mb-2"><a href="classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
-				<li class="nav-item mb-2"><a href="surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
-				<li class="nav-item mb-2"><a href="gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
+                <li class="nav-item mb-2"><a href="../openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
+				<li class="nav-item mb-2"><a href="../classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
+				<li class="nav-item mb-2"><a href="../surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
+				<li class="nav-item mb-2"><a href="../gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
               </ul>
             </div>
              <div class="col-4 col-md-2 mb-3">
@@ -86,7 +93,7 @@
 
 	</div>    
 </footer>
-<script src="./js/script.js"></script>
+<script src="../js/script.js"></script>
 <script src="./js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
