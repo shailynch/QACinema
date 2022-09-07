@@ -1,4 +1,6 @@
-
+	
+	
+	
 	function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
@@ -19,8 +21,8 @@
 		document.getElementById("bookingForm").innerHTML= `
 		 <label for="films" class="col-2">Choose a Film</label>
                 <label for="id" class="col-2">Enter customer ID</label>
-                <label for="adultSeats" class="col-2">How many adult seats</label>
-                <label for="childSeats" class="col-2">How many child seats</label>
+                <label for="adultSeats" class="col-2">How many adult seats £7.50</label>
+                <label for="childSeats" class="col-2">How many child seats £2.50</label>
                 <label for="date" class="col-2">What date</label>
 				<label for="time" class="col-2">What Time?</label>                
                 <select id="films" name="films" onload="readFilms()"onchange="readViewings();" class="col-2">
@@ -32,7 +34,7 @@
                	 <input type="date" id="bookingDate" name="bokingDate"value="${availibleDates()}" min="${availibleDates()}" max="${availibleDates()+30}" class="col-2">		
                 <select id="displayViewings" onload="readViewings()" class="col-2">
 				  </select>
-                <!-- <button type="submit" class="btn btn-primary" onclick="addCustomer()" >Submit</button> -->
+                <button type="submit" class="btn btn-primary" onclick="bookViewing()" >Book</button>
 		`
 		availibleDates();
 	}
