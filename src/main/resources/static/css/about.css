@@ -1,0 +1,89 @@
+#aboutH1{
+    color: rgb(196, 191, 191);
+    padding-right: 20%;
+    margin-bottom: 1%;
+}
+
+#aboutP{
+    color: rgb(196, 191, 191);
+}
+
+#aboutUsH1{
+    color: rgb(196, 191, 191);
+}
+
+#ScrumContH1{
+    color: rgb(196, 191, 191);
+}
+
+#aboutUsCont{
+    border-style: solid;
+    border-radius: 15px;
+    border-color: white;
+    padding:8px;
+    width: 80%;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+}
+
+#scrumCont{
+    border-style: solid;
+    border-radius: 15px;
+    border-color: white;
+    width: 80%;
+    padding:8px;
+}
+
+#altHead{
+    color: rgb(196, 191, 191);
+}
+
+main{
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+ /* Style the accordion buttons */
+ .accordion {
+    background-color: #330033;
+    color: rgb(196, 191, 191);
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-weight: bolder;
+    border-radius: 5px;
+  }
+  
+  
+  .accordion:hover {
+    background-color: #530253;
+  }
+  
+  .active{
+    background-color: #330033;
+  }
+
+  .panel {
+    padding: 0 18px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #530253;
+    display: none;
+    overflow: hidden;
+  } 
+
+  #responsibilies li{
+    list-style: none;
+    color: rgb(196, 191, 191);
+  }
+
+  #ourLinks{
+    list-style: none;
+    color: rgb(196, 191, 191);
+  }
+

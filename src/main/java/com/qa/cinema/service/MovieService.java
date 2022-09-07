@@ -47,6 +47,9 @@ public class MovieService {
 			oldMovie.setAgeRating(updateMovie.getAgeRating());
 			oldMovie.setDescription(updateMovie.getDescription());
 			oldMovie.setPosterUrl(updateMovie.getPosterUrl());
+			oldMovie.setFilmImg1(updateMovie.getFilmImg1());
+			oldMovie.setFilmImg2(updateMovie.getFilmImg2());
+			oldMovie.setFilmImg3(updateMovie.getFilmImg3());
 			return repo.save(oldMovie);
 		}
 		return null;

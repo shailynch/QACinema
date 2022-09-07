@@ -218,6 +218,10 @@ body {
     font-size: 70%;
 }
 
+.text-capitilsed {
+  text-transform: capitalize;
+}
+
 .poster-thumbnail {
   background-position:center;
   background-repeat:no-repeat;
@@ -326,3 +330,5 @@ td {
   background-repeat:no-repeat;
   background-size: contain;
 }
+
+

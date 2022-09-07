@@ -29,8 +29,10 @@ public class MovieServiceUnitTesting {
 	@Test
 	public void createMovie_ValidMovie_SaveMovie() {
 		Movie validMovie = new Movie(1L, "Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U",
-				"A tale about a deer", "https://picsum.photos/200", false);
+				"A tale about a deer", "https://picsum.photos/200", "https://picsum.photos/200",
+				"https://picsum.photos/200", "https://picsum.photos/200", false);
 		Movie saveMovie = new Movie("Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U", "A tale about a deer",
+				"https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200",
 				"https://picsum.photos/200", false);
 
 		Mockito.when(this.service.addMovie(saveMovie)).thenReturn(validMovie);
@@ -42,6 +44,7 @@ public class MovieServiceUnitTesting {
 	public void readMovies_ValidMovies_Movies() {
 		List<Movie> movies = new ArrayList<>();
 		movies.add(new Movie(1L, "Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U", "A tale about a deer",
+				"https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200",
 				"https://picsum.photos/200", false));
 
 		Mockito.when(this.service.readAll()).thenReturn(movies);
@@ -52,7 +55,8 @@ public class MovieServiceUnitTesting {
 	@Test
 	public void readOneMovie_ValidMovie_OneMovie() {
 		Movie validMovie = new Movie(1L, "Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U",
-				"A tale about a deer", "https://picsum.photos/200", false);
+				"A tale about a deer", "https://picsum.photos/200", "https://picsum.photos/200",
+				"https://picsum.photos/200", "https://picsum.photos/200", false);
 
 		Mockito.when(this.repo.findById(validMovie.getId())).thenReturn(Optional.of(validMovie));
 		assertThat(this.service.readMovie(validMovie.getId())).isEqualTo(validMovie);
@@ -63,10 +67,12 @@ public class MovieServiceUnitTesting {
 	@Test
 	public void updateMovie_ValidMovie_UpdatedMovie() {
 		Movie validMovie = new Movie(1L, "Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U",
-				"A tale about a deer", "https://picsum.photos/200", false);
+				"A tale about a deer", "https://picsum.photos/200", "https://picsum.photos/200",
+				"https://picsum.photos/200", "https://picsum.photos/200", false);
 
 		Movie newMovie = new Movie("Finding Paul", 190, "Barry Chuckle", "Kids", "20/08/2022", "18",
-				"Barry's search for his brother Paul", "https://picsum.photos/200", false);
+				"Barry's search for his brother Paul", "https://picsum.photos/200", "https://picsum.photos/200",
+				"https://picsum.photos/200", "https://picsum.photos/200", false);
 
 		Mockito.when(this.repo.findById(validMovie.getId())).thenReturn(Optional.of(validMovie));
 		this.service.updateMovie(newMovie, validMovie.getId());
@@ -79,7 +85,8 @@ public class MovieServiceUnitTesting {
 	@Test
 	public void deleteMovie_Movie() {
 		Movie validMovie = new Movie(1L, "Bambi", 88, "Bambi, Thumper", "Horror", "14/05/1945", "U",
-				"A tale about a deer", "https://picsum.photos/200", false);
+				"A tale about a deer", "https://picsum.photos/200", "https://picsum.photos/200",
+				"https://picsum.photos/200", "https://picsum.photos/200", false);
 
 		Mockito.when(this.repo.findById(validMovie.getId())).thenReturn(Optional.of(validMovie));
 		this.service.deleteByMovieID(validMovie.getId());
