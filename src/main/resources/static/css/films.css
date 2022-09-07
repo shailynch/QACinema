@@ -308,3 +308,21 @@ td {
 .alert {
   position: relative;
 }
+
+.isNew {
+  height: 30px;
+  width: 30px;
+  background: url(../images/icons/icons8-done-48.png);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: contain;
+}
+
+.isNotNew {
+  height: 30px;
+  width: 30px;
+  background: url(../images/icons/icons8-close-48.png);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: contain;
+}
