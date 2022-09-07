@@ -6,24 +6,26 @@ const readAllMovies = () => {
        .then(response => response.json())
        .then(model => model.forEach(e => {
 
-        console.log(e);
-
         function ageRating() {
-            if(e.ageRating === "U"){
+            let ageRate = e.ageRating.toUpperCase();
+            if(ageRate === "U"){
                 return "./images/Classification-Logos/U-class-dark.jpg";
-            } else if ( e.ageRating === "PG"){
+            } else if (ageRate === "PG"){
                 return "./images/Classification-Logos/PG-class-dark.jpg";
-            } else if ( e.ageRating === "12"){
+            } else if (ageRate === "12"){
                 return "./images/Classification-Logos/12A-class-dark.jpg";
-            } else if ( e.ageRating === "12A"){
+            } else if (ageRate === "12A"){
                 return "./images/Classification-Logos/12A-class-dark.jpg";
-            } else if ( e.ageRating === "15"){
+            } else if (ageRate === "15"){
                 return "./images/Classification-Logos/15-class-dark.jpg";
-            } else if ( e.ageRating === "18"){
+            } else if (ageRate === "18"){
                 return "./images/Classification-Logos/18-class-dark.jpg";
             } else {
                 return "./images/Classification-Logos/R18-class-dark.jpg";
-            };}
+            };
+        }
+
+
 
             let movieEl = document.createElement('div');
             movieEl.classList.add('movie');
@@ -35,14 +37,20 @@ const readAllMovies = () => {
                         <div class="movie-img" id="image-section">
                             <img class="img" src=${e.posterUrl} />
                         </div>
+                        <span class="movie-stills-thumbnail">
+                            <img class="poster-thumbnail" src=${e.filmImg1} />
+                            <img class="poster-thumbnail" src=${e.filmImg2} />
+                            <img class="poster-thumbnail" src=${e.filmImg3} />
+                        </span>
+
                         <div class="movie-info" id="film-title">
                             <span class="movie-name">${e.title}</span>
                             <br />
                             <img class="age-rating-logo" src=${ageRating()} />
-                                <div class="about-movie post-line">
+                                <div class="about-movie post-line text-capitilsed">
                                     ${e.runtime} Mins | ${e.genre} | Released: ${e.releaseDate}
                                 </div>       
-                                <div class="post-line">
+                                <div class="post-line text-capitilsed">
                                     <span>Cast: </span>${e.cast} <br/>  
                                 </div>
                                 <div class="post-line">
