@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -54,6 +55,16 @@ public class MovieController {
 	public ResponseEntity<Movie> updateMovieById(@PathVariable("movieId") Long Id, @RequestBody Movie movie) {
 		Movie updatedMovie = this.service.updateMovie(movie, Id);
 		return new ResponseEntity<Movie>(updatedMovie, HttpStatus.OK);
+	}
+
+	@CrossOrigin
+	@PatchMapping("/update/{Id}/newRelease")
+	public ResponseEntity<Movie> newRelease(@PathVariable Long Id, @RequestBody Movie newReleaseMovie) {
+		Movie oldMovie = this.service.readMovie(Id);
+
+		oldMovie.setNewRelease(newReleaseMovie.getNewRelease());
+		Movie updatedMovie = this.service.newReleaseMovie(oldMovie, Id);
+		return ResponseEntity.ok(updatedMovie);
 	}
 
 	@CrossOrigin

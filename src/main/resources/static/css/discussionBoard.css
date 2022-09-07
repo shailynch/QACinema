@@ -1,0 +1,31 @@
+
+a {
+  text-decoration: none;
+  color: black;
+}
+h1, h4, ol {
+  color: blue;
+  margin: 0;
+}
+p {
+  margin: 5px 0;
+}
+.top-bar {
+  background-color: skyblue;
+  padding: 0 40px;
+}
+.main {
+  background-color: #100811;
+  padding: 15px 20px;
+}
+.row {
+  padding: 5px 0;
+}
+.bottom {
+  display: flex;
+  color: grey;
+  font-size: 12px;
+}
+.timestamp {
+  padding-right: 10px;
+}
