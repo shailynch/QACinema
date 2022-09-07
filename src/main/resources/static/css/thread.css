@@ -3,7 +3,7 @@ a {
   color: black;
 }
 
-h1, h4, ol {
+h4, ol {
   margin: 0;
 }
 
@@ -17,14 +17,6 @@ p {
     background-color: gray;
 }
 
-.top-bar {
-    padding: 0 40px;
-}
-
-.top-bar h1{
-    color: #830c83;
-    text-align: center;
-}
 .main {
     background-color: #100611;
     padding: 10px 50px;

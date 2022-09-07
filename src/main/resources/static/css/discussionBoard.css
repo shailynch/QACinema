@@ -1,9 +1,8 @@
-
 a {
   text-decoration: none;
   color: black;
 }
-h1, h4, ol {
+h4, ol {
   color: blue;
   margin: 0;
 }

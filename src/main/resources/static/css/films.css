@@ -1,174 +1,36 @@
-body {
-    min-height: 100px;
-    /* margin-bottom: 350px; */
-    background-color: #100811;
-    color: #FFFFFF;
- }
- .header {
-     height: 310px;
-     margin: auto;
- }
- 
- .header img{
-     height: 150px;
- }
- 
- .header-right{
-     float: right;
-     font-size: 17px;
-     
- }
- 
- .topnav {
-     background-color:   #0e5f99;    
-     overflow: hidden;
-     padding: 10px;
- }
- 
- /* Style the links inside the navigation bar */
- .topnav a {
-   float: left;
-   color: #f2f2f2;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-   font-size: 17px;
- }
- 
- /* Change the color of links on hover */
- .topnav a:hover {
-   background-color: #ddd;
-   color: black;
- }
- 
- /* Add a color to the active/current link */
- .topnav a.active {
-   background-color: #04AA6D;
-   color: #FFFFFF;
- }
- 
- 
- /* Right-aligned section inside the top navigation */
- .topnav-right {
-     background-color: #0e5f99;
-     overflow: hidden;
-     float: right;
-     
-   }
- 
-   .header-right {
-     padding: 10px;
-   }
- 
-   .form {
-     padding: 10px;
-   }
- 
-   footer {
-     background-color: #330033;
-     color: #e6ffff;
-       bottom: 0;
-       width: 100%;
-   }
-   
-   .mainFooter{
-     background-color: 	 #330033;
-     color:#e6ffff;
-       width: 100%;
-   }
-   
-   .form{
-   overflow: visible;
-   }
-   
- #cinemaColour {
-     color:#0e5f99;
- }
- 
- main {
-     overflow: show;
- }
- 
- #background-match li a a:active a:hover a:visited{
-     color:#e6ffff;
- }
- 
- .navlink {
-     color:#e6ffff;
- }
- 
- 
- .navlink a:link {
-   color:#e6ffff;
- }
- 
- /* visited link */
- .navlink a:visited {
-   color:#e6ffff;
- }
- 
- /* mouse over link */
- .navlink a:hover {
-   color:#e6ffff;
- }
- 
- /* selected link */
- .navlink a:active {
-   color:#e6ffff;
- }
- 
- header {
-     background-color:	 #330033;
- }
+.age-rating-logo {
+  max-width: 10%;
+  max-height: 10%;
+  display: inline;
+}
 
-  p {
-    color: #FFFFFF;
-  }
+.film-title {
+  color:#330033;
+  font-size: 200%;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline;
+}
 
-  h1 {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    color: #FFFFFF;
-    font-size: 240%;
-    text-transform: uppercase;
-  }
+.film-title-logo {
+  margin-top: 1%;
+}
 
-  .copywrite-text {
-    color: #FFFFFF;
-  }
+.cinema-film-placeholder {
+  height: 50%;
+}
 
-  .age-rating-logo {
-    max-width: 10%;
-    max-height: 10%;
-    display: inline;
-  }
-
-  .film-title {
-    color:#330033;
-    font-size: 200%;
-    font-weight: 600;
-    text-transform: uppercase;
-    display: inline;
-  }
-
-  .film-title-logo {
-    margin-top: 1%;
-  }
-
-  .cinema-film-placeholder {
-    height: 50%;
-  }
-
-  .movie-details {  
-    box-sizing: border-box;  
-    background: #000; 
-    font-family: verdana, arial;  
-    font-size: 1.4rem; color: #fff; 
-    line-height: 1.6em; 
-    box-shadow: 0px 25px 25px -8px rgba(0, 0, 0, .7);
-    padding: 0 0 30px; margin: auto;
-    max-width: 560px; 
-    text-align: -webkit-center; zoom: 1; }
+.movie-details {  
+  box-sizing: border-box;  
+  background: #000; 
+  font-family: verdana, arial;  
+  font-size: 1.4rem; color: #fff; 
+  line-height: 1.6em; 
+  box-shadow: 0px 25px 25px -8px rgba(0, 0, 0, .7);
+  padding: 0 0 30px; margin: auto;
+  max-width: 560px; 
+  text-align: -webkit-center; zoom: 1; 
+}
 
 
 .movie-img  { box-sizing: border-box; 

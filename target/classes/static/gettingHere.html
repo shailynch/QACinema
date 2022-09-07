@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA Cinema</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/gettinghere.css">
-    <link rel="stylesheet" href="css/main.css">
+    <title>QA Cinema - Getting Here</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gettinghere.css">
+</head> 
 <body>
-  <header class="p-3 ">
+<header class="p-3 ">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -21,29 +21,22 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           	<li><a href="index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
           	<li><a href="films.html" class="nav-link px-2 text-white"> Films</a></li>
-			<li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+			      <li><a href="screen.html" class="nav-link px-2 text-white"> Screens</a></li>
 			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
-        	           <!-- new customer register -->
-            <a href="newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
-            <!-- existing customer update -->
-            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
-            <!-- new booking  -->
-            <a href="#" class="nav-link px-2 text-white">bookings</a>
-            <!-- update booking-->
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+              </form>
+            <a href="newCustomerForm.html" class="nav-link px-2 text-white">Register Account</a>
+            <a href="updateCustomerForm.html" class="nav-link px-2 text-white">Update Account</a>
+            <a href="booking.html" class="nav-link px-2 text-white">Bookings</a>
         </ul>
-
-
       </div>
     </div>
   </header>
       <main>
+        <br />
         <h3 id="cinemaColour">Getting Here</h3> 
         <h4 id="gettinghereH4">Public Transport Links</h4>
-		<div class="container">
-			
-			
+		<div class="map-container">
 				 
         <div id="trainStations">
 					<h6 id="trainH6">Our closest stations are Tower Hill, Fenchurch Street and London Bridge</h6>
@@ -54,47 +47,56 @@
 					<h6 id="busH6">We are a 2 minute walk from Tower Hill / Tower Gateway Station (Stop TE), London EC3N 4DX,  Where buses 42,78,100 and 343 stop.</h6>
           <img alt="map of train links" src="./images/busStop.png" style="width:350px">
         </div>
-					
-				
 				
 		</div>
     <div id="googlemap">
     <iframe title="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.310750334873!2d-0.07527325135893725!3d51.507514690883944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876034903d87ca7%3A0xee9b05e760a217f7!2sInternational%20House%2C%201%20St%20Katharine&#39;s%20Way%2C%20London%20E1W%201YL!5e0!3m2!1sen!2suk!4v1662547481599!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-      </main>
-     <footer class="py-5 mainFooter footer mt-auto">
-      <div class="container ">
-          <div class="row">
-            <div class="col-3 col-md-2 mb-3">
-              <h5>QA Cinema</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2">3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN</li>
-              </ul>
-            </div>
-      		<div class="col-3 col-md-2 mb-3">
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-                <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
-                <li class="nav-item mb-2"><a href="contactUs.html" class="nav-link p-0 text-muted">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="col-4 col-md-2 mb-3">
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
-				<li class="nav-item mb-2"><a href="classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
-				<li class="nav-item mb-2"><a href="surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
-				<li class="nav-item mb-2"><a href="gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
-              </ul>
-            </div>
-             <div class="col-4 col-md-2 mb-3">
-             	<i class="fa fa-phone"> 01702000000 </i>Cinema Number 
-              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                  <p>&copy; 2022 Company, Inc. All rights reserved.</p>
-                </div>
-          	</div> 
-          </div>
+  </main>
+  <br />
 
-	</div>    
+<footer class="py-5 mainFooter footer mt-auto">
+  <div class="container ">
+      <div class="row">
+        <div class="col-3 col-md-2 mb-3">
+          <h5>QA Cinema</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">3rd Floor, International House, ​1 St Katharine's Way, ​London,​ E1W 1UN</li>
+          </ul>
+        </div>
+      <div class="col-3 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-4 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="contactUs.html" class="nav-link p-0 text-muted">Contact Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-4 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="openingTimes.html" class="nav-link p-0 text-muted" id="background-match">Opening Times</a></li>
+    <li class="nav-item mb-2"><a href="classifications.html" class="nav-link p-0 text-muted">Classifications</a></li>
+    <li class="nav-item mb-2"><a href="surroundings.html" class="nav-link p-0 text-muted">Local venues</a></li>
+    <li class="nav-item mb-2"><a href="gettingHere.html" class="nav-link p-0 text-muted">Getting here</a></li>
+          </ul>
+        </div>
+          <div class="col-4 col-md-2 mb-3">
+            <i class="fa fa-phone"> 01702000000 </i> 
+          <br /> 
+          <span> Cinema Number </span>
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+              <p class="copywrite-text">&copy; 2022 Company, Inc. All Rights Reserved.</p>
+            </div>
+        </div> 
+      </div>
+  </div>   
 </footer>
 <script src="./js/script.js"></script>
 <script src="./js/bootstrap.bundle.min.js"></script> 
