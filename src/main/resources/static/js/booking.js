@@ -65,7 +65,7 @@ const readViewings = () => {
 	const viewingURL = "http://localhost:8090/viewing";
 	const films = document.getElementById("films");
 	let selectedFilm = films.options[films.selectedIndex].value;
-	 let html = `<option>Pick a film</option>`;
+	 let html = `<option>Pick a time</option>`;
 	fetch(`${viewingURL}/all`)
      .then((response) => {
          if (response.status !== 200) {
