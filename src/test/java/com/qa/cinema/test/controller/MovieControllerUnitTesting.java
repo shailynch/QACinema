@@ -33,7 +33,8 @@ public class MovieControllerUnitTesting {
 
 	@Test
 	public void createMovieTest() throws Exception {
-		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", false);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", "url", "url",
+				"url", false);
 		Mockito.when(this.service.addMovie(validMovie)).thenReturn(validMovie);
 		ResponseEntity<Movie> response = new ResponseEntity<Movie>(validMovie, HttpStatus.CREATED);
 		assertThat(response).isEqualTo(controller.addMovie(validMovie));
@@ -42,7 +43,8 @@ public class MovieControllerUnitTesting {
 
 	@Test
 	public void getAllMoviesTest() {
-		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", false);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", "url", "url",
+				"url", false);
 		List<Movie> movies = new ArrayList<>();
 		movies.add(validMovie);
 		Mockito.when(this.service.readAll()).thenReturn(movies);
@@ -52,7 +54,8 @@ public class MovieControllerUnitTesting {
 
 	@Test
 	public void getMovieById() {
-		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", false);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", "url", "url",
+				"url", false);
 		List<Movie> movies = new ArrayList<>();
 		movies.add(validMovie);
 
@@ -67,11 +70,13 @@ public class MovieControllerUnitTesting {
 
 	@Test
 	public void updateMovieById() {
-		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", false);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", "url", "url",
+				"url", false);
 		List<Movie> movies = new ArrayList<>();
 		movies.add(validMovie);
 
-		Movie updateMovie = new Movie("movie", 90, "bill", "genre", "87", "12", "descr", "image", false);
+		Movie updateMovie = new Movie("movie", 90, "bill", "genre", "87", "12", "descr", "image", "image", "image",
+				"image", false);
 
 		Mockito.when(this.service.updateMovie(updateMovie, validMovie.getId())).thenReturn(validMovie);
 		ResponseEntity<Movie> response = new ResponseEntity<Movie>(validMovie, HttpStatus.OK);
@@ -96,7 +101,8 @@ public class MovieControllerUnitTesting {
 
 	@Test
 	public void deleteMovietest() {
-		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", false);
+		Movie validMovie = new Movie(1L, "Top Gun", 120, "tommy c", "action", "22", "15", "desc", "url", "url", "url",
+				"url", false);
 		List<Movie> movies = new ArrayList<>();
 		movies.add(validMovie);
 
