@@ -2,7 +2,7 @@ document.querySelector('#search').addEventListener("click", getFilmByTitle);
 
 function getFilmByTitle(e){
     const id = document.querySelector("#filmSearch").value;
-    fetch(`http://localhost:8090/movie/${title}`)
+    fetch(`http://localhost:8090/movie/${id}`)
     .then(res => res.json())
     .then((data) => {
         document.querySelector(".films").innerHTML = `
@@ -10,10 +10,10 @@ function getFilmByTitle(e){
     <h1>${data.title}</h1>
     <p>Runtime: ${data.runtime}</p>
     <p>Cast: ${data.cast}</p>
-    <p>Release Date: ${data.release_date}</p>
-    <p>Age Rating : ${data.age_rating}</p>
+    <p>Release Date: ${data.releaseDate}</p>
+    <p>Age Rating : ${data.ageRating}</p>
     <p>Description: ${data.description}</p>
-    <p><img href="${data.post_url}"></p>
+    <p><img src=${data.posterUrl}></p>
     </div>
     `;
     }).catch((err) => {
