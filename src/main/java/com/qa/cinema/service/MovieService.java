@@ -30,7 +30,7 @@ public class MovieService {
 		return repo.findById(id).get();
 	}
 
-	public Movie readMovie(String title) {
+	public Movie readMovieByTitle(String title) {
 		return MovieRepo.findByTitle(title);
 	}
 
