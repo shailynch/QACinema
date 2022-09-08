@@ -80,7 +80,7 @@
 .films {
   display: flex;
   margin-top: 2rem;
-  justify-content: left;
+  justify-content: center;
 }
 
 .films p {
@@ -89,5 +89,6 @@
 
 .films .filmInfo {
   padding: 2rem;
+  color:rgb(216, 212, 255);
 }
 
