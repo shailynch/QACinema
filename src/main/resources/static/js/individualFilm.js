@@ -8,25 +8,25 @@ const readOneMovie = () => {
        .then(response => response.json())
        .then(model =>  {
 
-        function ageRating() {
-            let ageRate = model.ageRating.toUpperCase();
-            if(ageRate === "U"){
-                return "./images/Classification-Logos/U-class-dark.jpg";
-            } else if (ageRate === "PG"){
-                return "./images/Classification-Logos/PG-class-dark.jpg";
-            } else if (ageRate === "12"){
-                return "./images/Classification-Logos/12A-class-dark.jpg";
-            } else if (ageRate === "12A"){
-                return "./images/Classification-Logos/12A-class-dark.jpg";
-            } else if (ageRate === "15"){
-                return "./images/Classification-Logos/15-class-dark.jpg";
-            } else if (ageRate === "18"){
-                return "./images/Classification-Logos/18-class-dark.jpg";
-            } else {
-                return "./images/Classification-Logos/R18-class-dark.jpg";
-            };
-        }
-
+//         function ageRating() {
+//             let ageRate = model.ageRating.toUpperCase();
+//             if(ageRate === "U"){
+//                 return "./images/Classification-Logos/U-class-dark.jpg";
+//             } else if (ageRate === "PG"){
+//                 return "./images/Classification-Logos/PG-class-dark.jpg";
+//             } else if (ageRate === "12"){
+//                 return "./images/Classification-Logos/12A-class-dark.jpg";
+//             } else if (ageRate === "12A"){
+//                 return "./images/Classification-Logos/12A-class-dark.jpg";
+//             } else if (ageRate === "15"){
+//                 return "./images/Classification-Logos/15-class-dark.jpg";
+//             } else if (ageRate === "18"){
+//                 return "./images/Classification-Logos/18-class-dark.jpg";
+//             } else {
+//                 return "./images/Classification-Logos/R18-class-dark.jpg";
+//             };
+//         }
+//<img class="age-rating-logo" src=${ageRating()} />
         let movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
@@ -37,7 +37,7 @@ const readOneMovie = () => {
                 <span class="movie-name">${model.title}</span>
                 <br />
                 <br />
-                <img class="age-rating-logo" src=${ageRating()} />
+                
                 </div>
                 </div>
             </div>
