@@ -53,7 +53,7 @@ public class MovieController {
 	@CrossOrigin
 	@GetMapping("/{title}")
 	public Movie readMovieById(@PathVariable String title) {
-		return service.readMovie(title);
+		return service.readMovieByTitle(title);
 	}
 
 	@CrossOrigin

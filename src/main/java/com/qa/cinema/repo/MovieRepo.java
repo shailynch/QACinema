@@ -25,7 +25,7 @@ public interface MovieRepo extends JpaRepository<Movie, Long> {
 	}
 
 	@Query(value = "SELECT * FROM movie WHERE title = ?1", nativeQuery = true)
-	public static Movie findByTitle(String id) {
+	public static Movie findByTitle(String title) {
 		// TODO Auto-generated method stub
 		return null;
 	}
