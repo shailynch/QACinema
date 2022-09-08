@@ -95,17 +95,14 @@ main {
  color:#e6ffff;
 }
 
-/* visited link */
 .navlink a:visited {
  color:#e6ffff;
 }
 
-/* mouse over link */
 .navlink a:hover {
  color:#e6ffff;
 }
 
-/* selected link */
 .navlink a:active {
  color:#e6ffff;
 }
@@ -117,12 +114,23 @@ header {
 p {
  color: #FFFFFF;
 }
+
+h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: #FFFFFF;
+  font-size: 240%;
+  text-transform: uppercase;
+}
+
+.copywrite-text {
+  color: #FFFFFF;
+}
  
 .py-5{
   border-bottom-width: 10px;
 }
  
-  
 #cinemaColour {
 	color:white;
 }
@@ -133,15 +141,14 @@ p {
 	padding-bottom: 25px;
 }
 
-
 #extraPadding{
 	padding:15px;
 }
 
 #footer {
 	border-top-width: 10px;
-	
 }
+
 .extraPadding{
 	padding:15px;
 }
