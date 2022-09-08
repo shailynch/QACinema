@@ -8,9 +8,9 @@ const genreEl = document.querySelector('#genre');
 const descriptionEl = document.querySelector('#description')
 const ageRatingEl = document.querySelector('#ageRating');
 const posterEl = document.querySelector('#posterUrl')
-const film_img1el = document.queryselector('#filmImg1')
-const film_img2el = document.queryselector('#filmImg2')
-const film_img3el = document.queryselector('#filmImg3')
+const film_img1el = document.querySelector('#filmImg1')
+const film_img2el = document.querySelector('#filmImg2')
+const film_img3el = document.querySelector('#filmImg3')
 
 //Read All Films in Database
 const readAllFilms = () => {
