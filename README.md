@@ -27,9 +27,9 @@ Coverage:
 
 * **Andrew Pimlott** - *Project Dev* - [Pimmy17](https://github.com/Pimmy17) - [Portfolio](https://github.com/shailynch/QACinema/blob/main/Portfolios/AndyPimlottPortfolio.pdf)
 
-**Danyel Harrison** - *Project Dev* - [DanyelHarrison](https://github.com/DanyelHarrison) -
+* **Danyel Harrison** - *Project Dev* - [DanyelHarrison](https://github.com/DanyelHarrison) -
 
-**Shai Lynch** - *Project Dev* - [shailynch](https://github.com/shailynch) - 
+* **Shai Lynch** - *Project Dev* - [shailynch](https://github.com/shailynch) - 
 
 ## License
 
