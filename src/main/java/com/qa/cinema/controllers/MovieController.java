@@ -52,7 +52,7 @@ public class MovieController {
 
 	@CrossOrigin
 	@GetMapping("/{title}")
-	public Movie readMovieById(@PathVariable String title) {
+	public Movie readMovieByTitle(@PathVariable String title) {
 		return service.readMovieByTitle(title);
 	}
 
