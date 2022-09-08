@@ -8,7 +8,9 @@ const genreEl = document.querySelector('#genre');
 const descriptionEl = document.querySelector('#description')
 const ageRatingEl = document.querySelector('#ageRating');
 const posterEl = document.querySelector('#posterUrl')
-
+const film_img1el = document.queryselector('#filmImg1')
+const film_img2el = document.queryselector('#filmImg2')
+const film_img3el = document.queryselector('#filmImg3')
 
 //Read All Films in Database
 const readAllFilms = () => {
@@ -190,7 +192,9 @@ const createFilm = () => {
     let ageRating = ageRatingEl.value;
     let runtime = runtimeEl.value;
     let description = descriptionEl.value;
-    let newRelease = false;
+    let film_img1 = film_img1el.value;
+    let film_img2 = film_img2el.value;
+    let film_img3 = film_img3el.value;
 
     const film = {
         'title' : title,
@@ -201,7 +205,10 @@ const createFilm = () => {
         'ageRating' : ageRating,
         'runtime' : runtime,
         'description' : description,
-        'newRelease' : newRelease,
+        'newRelease' : false,
+        'filmImg1' : film_img1,
+        'filmImg2' : film_img2,
+        'filmImg3' : film_img3,
         }
         fetch(`${movieURL}/movie/add`, {
             method: "POST",
