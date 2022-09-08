@@ -1,5 +1,5 @@
 'use strict';
-const customerURL = "http://localhost:8090/customer";
+const customerURL = "http://18.132.36.167:8080/customer";
 
 
 const addCustomer = () => {
@@ -10,7 +10,7 @@ const addCustomer = () => {
 	const _mobile = document.querySelector("#mobile");
     const customerFirstName  = _first_name.value;
     const customerLastName  = _last_name.value;
-    const customerEmail = _dob.value;
+    const customerEmail = _email.value;
     const customerDob  = _first_name.value;
     const customerMobile  = _mobile.value;
     
