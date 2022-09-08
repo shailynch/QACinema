@@ -200,7 +200,7 @@ h1 {
 }
 
 .logo-header {
-  max-height: 85px;
+  max-height: 100px;
   max-width: 100px;
   transform: translateY(-15px);
   margin-right: 10px;
