@@ -1,9 +1,9 @@
 document.querySelector('#search').addEventListener("click", getFilmByTitle);
-
+// small bug getting this function to work with title, will implement bug fix at a later date
 function getFilmByTitle(e){
-    const title = document.querySelector("#filmSearch").get();
+    const id = document.querySelector("#filmSearch").value;
 
-    fetch(`http://18.132.36.167:8080/movie/title/${title}`)
+    fetch(`http://18.132.36.167:8080/movie/${id}`)
     .then(res => res.json())
     .then((data) => {
         document.querySelector(".films").innerHTML = `
