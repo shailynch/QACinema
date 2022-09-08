@@ -2,7 +2,7 @@ document.querySelector('#search').addEventListener("click", getFilmByTitle);
 
 function getFilmByTitle(e){
     const title = document.querySelector("#filmSearch").value;
-    fetch(`http://localhost:8090/movie/title/${title}`)
+    fetch(`http://18.132.36.167:8080/movie/title/${title}`)
     .then(res => res.json())
     .then((data) => {
         document.querySelector(".films").innerHTML = `
