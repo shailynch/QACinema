@@ -1,5 +1,5 @@
 'use strict';
-const viewingURL = "http://localhost:8090/viewing";
+const viewingURL = "http://18.132.36.167:8080/viewing";
 
 
 const addViewing = () => {
