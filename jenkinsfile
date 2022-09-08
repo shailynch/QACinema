@@ -78,7 +78,7 @@ sudo mv /home/jenkins/myApp.service /etc/systemd/system/myApp.service
 		stage('Reload and restart service'){
 			steps{
 			sh '''
-			ssh -tt -i "~/.ssh/id_rsa" jenkins@18.132.36.167 << EOF
+			ssh -i "~/.ssh/id_rsa" jenkins@18.132.36.167 << EOF
 			sudo systemctl daemon-reload
 			sudo systemctl restart myApp
 			'''
