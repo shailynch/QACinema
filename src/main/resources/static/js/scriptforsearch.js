@@ -13,7 +13,7 @@ function getFilmByTitle(e){
     <p>Release Date: ${data.release_date}</p>
     <p>Age Rating : ${data.age_rating}</p>
     <p>Description: ${data.description}</p>
-    <p>Poster: ${data.poster_url}</p>
+    <p><img href="${data.post_url}"></p>
     </div>
     `;
     }).catch((err) => {
