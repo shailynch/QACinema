@@ -67,7 +67,7 @@
    // creating the create function to add a new comment to the comments database table. 
     function addNewComment(){
 		
-		let threadLoc = "http://localhost:8090";
+		let threadLoc = "http://18.132.36.167:8080";
 		let commentTxt = document.querySelector('textarea');
 		let newComment = {
 			commentContent: commentTxt.value,
@@ -90,7 +90,7 @@
 	
 	// creating the read function to retireve all past comments from the comments database table
 	function readDbComments(){
-		let threadLoc = "http://localhost:8090";
+		let threadLoc = "http://18.132.36.167:8080";
 		fetch(`${threadLoc}/comments/all${id}`)
 		.then((response) => {
 			response.json()
