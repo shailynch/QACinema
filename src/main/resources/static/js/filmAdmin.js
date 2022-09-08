@@ -190,6 +190,7 @@ const createFilm = () => {
     let ageRating = ageRatingEl.value;
     let runtime = runtimeEl.value;
     let description = descriptionEl.value;
+    let newRelease = false;
 
     const film = {
         'title' : title,
@@ -200,6 +201,7 @@ const createFilm = () => {
         'ageRating' : ageRating,
         'runtime' : runtime,
         'description' : description,
+        'newRelease' : newRelease,
         }
         fetch(`${movieURL}/movie/add`, {
             method: "POST",
