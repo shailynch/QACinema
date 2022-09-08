@@ -152,3 +152,60 @@ h1 {
 .extraPadding{
 	padding:15px;
 }
+
+
+.a {
+  color:#FDFAC3;
+  font-size: larger;
+}
+
+.a:hover {
+  color: #F8B54C;
+}
+
+.btn {
+  background-color: #530253;
+  margin-top: 1%;
+}
+
+.dropdown-menu {
+  background-color: #530253;
+  margin-top: 1%;
+}
+
+.dropdown-item {
+  color:#FFFFFF;
+  font-size: 130%;
+}
+
+.nav-link {
+  color: #FFFFFF;
+  font-size: 140%;
+}
+
+.nav-link .active {
+  color: #e6ffff;
+}
+
+.nav-link:hover {
+  color: #e6ffff;
+}
+
+.nav-link:visited {
+  color: #FFFFFF;
+}
+
+.nav-link::selection {
+  color: #FFFFFF;
+}
+
+.logo-header {
+  max-height: 85px;
+  max-width: 100px;
+  transform: translateY(-15px);
+  margin-right: 10px;
+}
+
+.header-container {
+  padding-top: 20px;
+}
