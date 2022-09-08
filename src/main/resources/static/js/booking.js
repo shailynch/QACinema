@@ -64,7 +64,7 @@
 	   readFilms();
 
 const readViewings = () => {
-	const viewingURL = "http://localhost:8090/viewing";
+	const viewingURL = "http://18.132.36.167:8080//viewing";
 	const films = document.getElementById("films");
 	let selectedFilm = films.options[films.selectedIndex].value;
 	 let html = `<option>Pick a time</option>`;
