@@ -30,6 +30,10 @@ public class MovieService {
 		return repo.findById(id).get();
 	}
 
+	public Movie readMovie(String title) {
+		return MovieRepo.findByTitle(title);
+	}
+
 	public List<Movie> readAll() {
 		return repo.allFromMovie();
 	}

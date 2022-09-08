@@ -51,6 +51,12 @@ public class MovieController {
 	}
 
 	@CrossOrigin
+	@GetMapping("/{title}")
+	public Movie readMovieById(@PathVariable String title) {
+		return service.readMovie(title);
+	}
+
+	@CrossOrigin
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Movie> updateMovieById(@PathVariable("movieId") Long Id, @RequestBody Movie movie) {
 		Movie updatedMovie = this.service.updateMovie(movie, Id);
