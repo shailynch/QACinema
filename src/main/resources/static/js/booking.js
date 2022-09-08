@@ -42,7 +42,7 @@
 	makeBooking();
 	   
 	   const readFilms = () => {
-		const filmURL = "http://localhost:8090/movie";
+		const filmURL = "http://18.132.36.167:8080/movie";
 	 let html = "  <option disabled selected value> -- select an option -- </option>";
 	fetch(`${filmURL}/all`)
      .then((response) => {
@@ -64,7 +64,7 @@
 	   readFilms();
 
 const readViewings = () => {
-	const viewingURL = "http://18.132.36.167:8080//viewing";
+	const viewingURL = "http://18.132.36.167:8080/viewing";
 	const films = document.getElementById("films");
 	let selectedFilm = films.options[films.selectedIndex].value;
 	 let html = `<option>Pick a time</option>`;

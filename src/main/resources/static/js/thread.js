@@ -55,7 +55,7 @@
 //        })
 //        
         
-const threadLoc = "http://18.132.36.167:8080/"
+const threadLoc = "http://18.132.36.167:8080"
 let comments = document.querySelector('.comments');
 let id = window.location.search.slice(1);
 let thread = threads.find(t => t.id == id);  

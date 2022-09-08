@@ -1,4 +1,4 @@
-const movieURL = "http://18.132.36.167:8080/"
+const movieURL = "http://18.132.36.167:8080"
 
 const releaseDateEl = document.querySelector('#releaseDate');
 const runtimeEl = document.querySelector('#runtime');

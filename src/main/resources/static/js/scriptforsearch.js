@@ -1,5 +1,5 @@
 document.querySelector('#search').addEventListener("click", getFilmByTitle);
-const searchURL = "http://18.132.36.167:8080/";
+const searchURL = "http://18.132.36.167:8080";
 
 function getFilmByTitle(e){
     const title = document.querySelector("#filmSearch").value;

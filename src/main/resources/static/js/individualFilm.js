@@ -1,4 +1,4 @@
-const movieURL = "http://18.132.36.167:8080/";
+const movieURL = "http://18.132.36.167:8080";
 
 let id = window.location.search.slice(1);
 let main = document.querySelector('#main');

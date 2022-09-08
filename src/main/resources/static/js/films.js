@@ -1,4 +1,4 @@
-const movieURL = "http://18.132.36.167:8080/";
+const movieURL = "http://18.132.36.167:8080";
 const main = document.getElementById('main');
 
 const readAllMovies = () => {
