@@ -50,11 +50,11 @@ public class MovieController {
 		return service.readMovie(id);
 	}
 
-// 	@CrossOrigin
-// 	@GetMapping("/{title}")
-// 	public Movie readMovieByTitle(@PathVariable String title) {
-// 		return service.readMovieByTitle(title);
-// 	}
+	@CrossOrigin
+	@GetMapping("/title/{title}")
+	public Movie readMovieByTitle(@PathVariable String title) {
+		return service.readMovieByTitle(title);
+	}
 
 	@CrossOrigin
 	@PutMapping("/update/{id}")
