@@ -1,4 +1,4 @@
-const movieURL = "http://localhost:8080"
+const movieURL = "http://localhost:8080";
 const main = document.getElementById('main');
 
 const readAllMovies = () => {
@@ -25,8 +25,6 @@ const readAllMovies = () => {
             };
         }
 
-
-
             let movieEl = document.createElement('div');
             movieEl.classList.add('movie');
             movieEl.innerHTML = `
@@ -35,13 +33,10 @@ const readAllMovies = () => {
                 <div class="card shadow-sm">
                     <section class="movie-details">
                         <div class="movie-img" id="image-section">
-                            <img class="img" src=${e.posterUrl} />
+                            <a href="./individualFilm.html?${e.id}">
+                                <img class="img" src=${e.posterUrl} />
+                            </a>
                         </div>
-                        <span class="movie-stills-thumbnail">
-                            <img class="poster-thumbnail" src=${e.filmImg1} />
-                            <img class="poster-thumbnail" src=${e.filmImg2} />
-                            <img class="poster-thumbnail" src=${e.filmImg3} />
-                        </span>
 
                         <div class="movie-info" id="film-title">
                             <span class="movie-name">${e.title}</span>

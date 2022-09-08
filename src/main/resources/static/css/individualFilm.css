@@ -1,0 +1,189 @@
+ .age-rating-logo {
+    max-width: 12%;
+    max-height: 12%;
+    display: inline;
+  }
+
+  .film-title {
+    color:#330033;
+    font-size: 200%;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline;
+  }
+
+  .film-title-logo {
+    margin-top: 1%;
+  }
+
+  .cinema-film-placeholder {
+    height: 50%;
+  }
+
+  .movie-details {  
+    box-sizing: border-box;  
+    background: #000; 
+    font-family: verdana, arial;  
+    font-size: 1.4rem; color: #fff; 
+    line-height: 1.6em; 
+    box-shadow: 0px 25px 25px -8px rgba(0, 0, 0, .7);
+    padding: 0 0 30px; margin: auto;
+    max-width: 560px; 
+    text-align: -webkit-center; zoom: 1; }
+
+
+.movie-img  { box-sizing: border-box; 
+    overflow: hidden; }
+
+.movie-details .img { 
+    border-radius: 0 0 20px 20px; 
+    height: 560px;  width: 100%; 
+    max-width: 550px; }
+
+
+.movie-details .movie-info { 
+    box-sizing: border-box; 
+    margin: 20px; 
+    letter-spacing: 1.2px; }
+    
+
+.movie-info .movie-name {  
+    font-size: 4.5rem; 
+    font-weight: 700; 
+    display: inline;
+    text-transform: uppercase;
+}
+
+.thin-line {
+    border-bottom: 1.5px solid rgb(47, 47, 47);
+    line-height: 30px;  
+    width: 70%;
+}
+
+.about-movie { 
+    color: #d9d9d9; 
+    font-size: 1.3rem; 
+}
+
+.movie-details .post-line { 
+    border-bottom: 2.5px solid rgb(47, 47, 47); 
+    padding: 15px 0; 
+}
+
+.post-line span { 
+    font-weight: 700; 
+    font-size: 1.6rem; 
+}
+
+.movie-desc {
+    font-size: 100%;
+}
+
+.text-capitilsed {
+  text-transform: capitalize;
+}
+
+.additional-img {
+    width: 30%;
+    margin: 1%;
+}
+
+.extra-img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.panel .panel-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px;
+    background: #330033;
+    border-radius: 0px 0px 8px 8px;
+    box-sizing: border-box;
+}
+
+.panel .panel-body {
+    width: 100%;
+    border-radius: 0px 0px 8px 8px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.panel .panel-body .panel-left {
+    width: 50%;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #4f004f;
+    border-radius: 8px 0px 0px 0px;
+    box-sizing: border-box;
+}
+
+.panel .panel-body .panel-left button, .booking-btn {
+    height: 50px;
+    border-radius: 0px 0px 8px 8px;
+    border: 0;
+    outline: none;
+    color: white;
+    background: #330033;
+    font-size: 16px;
+    box-shadow: 0px 1px 10px 1px #08000036;
+}
+
+.panel .panel-body .panel-right {
+    width: 50%;
+    padding: 40px 50px;
+    background:#3a003a;
+    border-radius: 0px 8px 0px 0px;
+    box-sizing: border-box;
+}
+
+.panel .panel-body .panel-right h3 {
+    color: #FFFFFF;
+    font-size: 300%;
+    margin: 0px;
+}
+
+.panel .panel-body .panel-right .panel-text p {
+    margin: 2px 0px;
+    font-size: 170%;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 675px) {
+    body {
+        height: 100%;
+        margin: 60px auto;
+    }
+    main {
+        width: 310px;
+        margin: 0px auto;
+    }
+    .panel .panel-footer {
+        padding: 30px 25px;
+    }
+    .panel .panel-body {
+        flex-direction: column;
+    }
+    .panel .panel-body .panel-left {
+        width: 100%;
+        border-radius: 0px;
+        padding: 30px 25px;
+    }
+    .panel .panel-body .panel-right {
+        width: 100%;
+        border-radius: 0px 0px 8px 8px;
+        padding: 30px 25px;
+    }
+}
