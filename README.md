@@ -12,6 +12,8 @@ user-friendly web interface.
 
 ## Pre-requesities 
 
+* A Web-browser (Preferably Chrome) to access the webpage @ http://18.132.36.167:8080/.
+* May need a simple plugin (For Chromium browsers) to allow CORS policies, one can be downloaded [here](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)
 
 ## Built With
 
