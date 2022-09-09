@@ -7,7 +7,7 @@ Coverage:
 
 ## Info
 
-* URL for the kanban board: [Jira]
+* URL for the kanban board: [Jira](https://runtimeterror.atlassian.net/jira/software/c/projects/RT/boards/1?selectedIssue=RT-4)
 
 ## Pre-requesities 
 
