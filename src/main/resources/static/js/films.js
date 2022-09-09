@@ -1,6 +1,6 @@
 const movieURL = "http://18.132.36.167:8080";
 const main = document.getElementById('main');
-
+const viewingURL = "http://18.132.36.167:8080/viewing";
 const readViewings = () => {
 	 let html = " ";
 	fetch(`${viewingURL}/all`)
