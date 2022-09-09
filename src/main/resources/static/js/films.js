@@ -11,6 +11,7 @@ const getShowtimes = (id) => {
          }
      response.json()
      .then(viewings => viewings.forEach(viewing => {
+	console.log(`${id} pulled in id`);console.log(`${movieId} movie id`);
 		if(id == viewing.movieId){
 		 html = html + `
                                     <span><strong>Show Times: </strong></span><br/>
@@ -63,7 +64,7 @@ const readAllMovies = () => {
     fetch(`${movieURL}/movie/all`)
        .then(response => response.json())
        .then(model => model.forEach(e => {
-
+	console.log(e.id);
         function ageRating() {
             let ageRate = e.ageRating.toUpperCase();
             if(ageRate === "U"){
