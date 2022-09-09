@@ -1,9 +1,10 @@
 ## QA Cinema
 
-Coverage: 
+Coverage: 88.2%
 
-
-
+A full stack application for a newly
+opening cinema using a SpringBoot base with a
+user-friendly web interface.
 
 ## Info
 
