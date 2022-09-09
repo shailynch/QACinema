@@ -1,7 +1,23 @@
 const movieURL = "http://18.132.36.167:8080";
 const main = document.getElementById('main');
+const viewingURL = "http://18.132.36.167:8080/viewing";
+
+const readViewings = () => {
+	 let viewings = fetch(`${viewingURL}/all`)
+     .then((response) => {
+         if (response.status !== 200) {
+             console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
+             return;
+         } else {
+	return viewings
+}})
+     .catch(err => console.error(`Fetch Error :-S ${err}`));
+     };
+
+
 
 const readAllMovies = () => {
+	console.log(readViewings());
     fetch(`${movieURL}/movie/all`)
        .then(response => response.json())
        .then(model => model.forEach(e => {
