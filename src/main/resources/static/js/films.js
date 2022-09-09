@@ -11,7 +11,7 @@ const getShowtimes = (id) => {
          }
      response.json()
      .then(viewings => viewings.forEach(viewing => {
-	console.log(`${id} pulled in id`);console.log(`${movieId} movie id`);
+	console.log(`${id} pulled in id`);console.log(`${movieID} movie id`);
 		if(id == viewing.movieId){
 		 html = html + `
                                     <span><strong>Show Times: </strong></span><br/>
