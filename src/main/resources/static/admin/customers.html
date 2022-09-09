@@ -10,33 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
- <header class="p-3 ">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-        </a>
-
+ <header class="p-3">
+    <div class="container header-container">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          	<li><a href="../index.html" class="nav-link px-2 text-white" >QA Cinema</a> </li>
-          	<li><a href="../films.html" class="nav-link px-2 text-white"> Films</a></li>
-			<li><a href="../screen.html" class="nav-link px-2 text-white"> Screens</a></li>
-			        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
-        	           <!-- new customer register -->
-            <a href="../newCustomerForm.html" class="nav-link px-2 text-white">register account</a>
-            <!-- existing customer update -->
-            <a href="../updateCustomerForm.html" class="nav-link px-2 text-white">update account</a>
-            <!-- new booking  -->
-            <a href="../bookings.html" class="nav-link px-2 text-white">bookings</a>
-            <!-- update booking-->
+          	<li><a href="./index.html" class="nav-link px-2 text-white" ><img class="logo-header" src="./images/QACinemaLogo.png" alt="QA Cinema logo" /></a> </li>
+            <li><a href="./index.html" class="nav-link px-2 text-white" >Home</a> </li>
+          	<li><a href="./films.html" class="nav-link px-2 text-white"> Films</a></li>
+			      <li><a href="./screen.html" class="nav-link px-2 text-white"> Screens</a></li>
+            <li><a href="./booking.html" class="nav-link px-2 text-white"> Bookings </a></li>
+            <li><a href="#" class="nav-link px-2 text-white"></a></li>
+			      <li>
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+              </form>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                See More
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./surroundings.html">Around Us</a></li>
+                <li><a class="dropdown-item" href="./discussionBoard.html">Discussion Board</a></li>
+                <li><a class="dropdown-item" href="./gettingHere.html">Getting Here</a></li>
+                <li><a class="dropdown-item" href="./openingTimes.html">Opening Times</a></li>
+                <li><a class="dropdown-item" href="./newCustomerForm.html">Register Account</a></li>
+                <li><a class="dropdown-item" href="./updateCustomerForm.html">Update Account</a></li>
+                <li><a class="dropdown-item" href="./search4films.html">Search</a></li>
+              </ul>
+            </li>
         </ul>
-
-
-      </div>
     </div>
-  </header>
     <div id="cinemaColour">
         <div>
 			<ul = onload="readCustomers()" id="displayCustomers" class="customers">
