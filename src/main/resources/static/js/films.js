@@ -56,7 +56,7 @@ const getShowtimes = (id) => {
      .catch(err => console.error(`Fetch Error :-S ${err}`));
      });
 }
-readViewings();
+
 
 
 const readAllMovies = () => {
