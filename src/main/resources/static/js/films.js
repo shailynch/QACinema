@@ -111,6 +111,24 @@ const readAllMovies = () => {
                                 </div>
                                 <div class="about-movie show-times" id="showTimes" onload="getShowtimes(${e.id})">
                                     
+                                    <span><strong>Show Times: </strong></span><br/>
+                                    <p>
+                                    Monday: no viewings
+                                    <br/>
+                                    Tuesday: no viewings
+                                    <br/>
+                                    Wednesday: no viewings
+                                    <br/>
+                                    Thursday: no viewings
+                                    <br/>
+                                    Friday: no viewings
+                                    <br/>
+                                    Saturday: no viewings
+                                    <br/>
+                                    Sunday: no viewings
+                                    </p>
+
+        `
                                 </div>
                         </div>
                     </section>
