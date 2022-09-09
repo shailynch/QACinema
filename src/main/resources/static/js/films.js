@@ -113,19 +113,19 @@ const readAllMovies = () => {
                                     
                                     <span><strong>Show Times: </strong></span><br/>
                                     <p>
-                                    Monday: no viewings
+                                    Monday: 
                                     <br/>
-                                    Tuesday: no viewings
+                                    Tuesday: 
                                     <br/>
-                                    Wednesday: no viewings
+                                    Wednesday: 
                                     <br/>
-                                    Thursday: no viewings
+                                    Thursday: 
                                     <br/>
-                                    Friday: no viewings
+                                    Friday:
                                     <br/>
-                                    Saturday: no viewings
+                                    Saturday:
                                     <br/>
-                                    Sunday: no viewings
+                                    Sunday: 
                                     </p>
 
         
