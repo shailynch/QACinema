@@ -58,7 +58,7 @@ const getShowtimes = (id) => {
      });
 }
 
-
+getShowtimes();
 
 const readAllMovies = () => {
     fetch(`${movieURL}/movie/all`)
