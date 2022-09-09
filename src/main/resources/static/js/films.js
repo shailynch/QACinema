@@ -1,23 +1,44 @@
 const movieURL = "http://18.132.36.167:8080";
 const main = document.getElementById('main');
-const viewingURL = "http://18.132.36.167:8080/viewing";
 
 const readViewings = () => {
-	 let viewings = fetch(`${viewingURL}/all`)
+	 let html = " ";
+	fetch(`${viewingURL}/all`)
      .then((response) => {
          if (response.status !== 200) {
              console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
              return;
-         } else {
-	return response.json
-}})
-     .catch(err => console.error(`Fetch Error :-S ${err}`));
-     };
+         }
+     response.json()
+     .then(viewings => viewings.forEach(viewing => {
+		 html = html + `
+                                    <span><strong>Show Times: </strong></span><br/>
+                                    <p>
+                                    Monday: ${viewing.startTime}
+                                    <br/>
+                                    Tuesday:${viewing.startTime}
+                                    <br/>
+                                    Wednesday: ${viewing.startTime}
+                                    <br/>
+                                    Thursday:${viewing.startTime}
+                                    <br/>
+                                    Friday:${viewing.startTime}
+                                    <br/>
+                                    Saturday:${viewing.startTime}
+                                    <br/>
+                                    Sunday:${viewing.startTime}
+                                    </p>
 
+        `
+        document.getElementById("$viewing.movieId").innerHTML = html;
+}))
+     .catch(err => console.error(`Fetch Error :-S ${err}`));
+     });
+}
+readViewings();
 
 
 const readAllMovies = () => {
-	console.log(readViewings());
     fetch(`${movieURL}/movie/all`)
        .then(response => response.json())
        .then(model => model.forEach(e => {
@@ -67,24 +88,8 @@ const readAllMovies = () => {
                                 <div class="post-line">
                                     <p class="movie-desc">${e.description}</p>
                                 </div>
-                                <div class="about-movie show-times">
-                                    <br/>
-                                    <span><strong>Show Times: </strong></span><br/>
-                                    <p>
-                                    Monday:
-                                    <br/>
-                                    Tuesday:
-                                    <br/>
-                                    Wednesday:
-                                    <br/>
-                                    Thursday:
-                                    <br/>
-                                    Friday:
-                                    <br/>
-                                    Saturday:
-                                    <br/>
-                                    Sunday:
-                                    </p>
+                                <div class="about-movie show-times" id="${e.id}">
+                                    
                                 </div>
                         </div>
                     </section>
