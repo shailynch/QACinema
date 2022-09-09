@@ -128,7 +128,7 @@ const readAllMovies = () => {
                                     Sunday: no viewings
                                     </p>
 
-        `
+        
                                 </div>
                         </div>
                     </section>
