@@ -1,7 +1,7 @@
 const movieURL = "http://18.132.36.167:8080";
 const main = document.getElementById('main');
 const viewingURL = "http://18.132.36.167:8080/viewing";
-const readViewings = () => {
+const getShowtimes = (id) => {
 	 let html = " ";
 	fetch(`${viewingURL}/all`)
      .then((response) => {
@@ -11,6 +11,7 @@ const readViewings = () => {
          }
      response.json()
      .then(viewings => viewings.forEach(viewing => {
+		if(id == viewing.movieId){
 		 html = html + `
                                     <span><strong>Show Times: </strong></span><br/>
                                     <p>
@@ -29,8 +30,28 @@ const readViewings = () => {
                                     Sunday:${viewing.startTime}
                                     </p>
 
+        `}else {
+			html = html + `
+                                    <span><strong>Show Times: </strong></span><br/>
+                                    <p>
+                                    Monday: no viewings
+                                    <br/>
+                                    Tuesday: no viewings
+                                    <br/>
+                                    Wednesday: no viewings
+                                    <br/>
+                                    Thursday: no viewings
+                                    <br/>
+                                    Friday: no viewings
+                                    <br/>
+                                    Saturday: no viewings
+                                    <br/>
+                                    Sunday: no viewings
+                                    </p>
+
         `
-        document.getElementById("$viewing.movieId").innerHTML = html;
+}
+        document.getElementById("showTimes").innerHTML = html;
 }))
      .catch(err => console.error(`Fetch Error :-S ${err}`));
      });
@@ -88,7 +109,7 @@ const readAllMovies = () => {
                                 <div class="post-line">
                                     <p class="movie-desc">${e.description}</p>
                                 </div>
-                                <div class="about-movie show-times" id="${e.id}">
+                                <div class="about-movie show-times" id="showTimes" onload="getShowtimes(${e.id})">
                                     
                                 </div>
                         </div>
