@@ -64,7 +64,6 @@ const readAllMovies = () => {
     fetch(`${movieURL}/movie/all`)
        .then(response => response.json())
        .then(model => model.forEach(e => {
-	console.log(e.id);
         function ageRating() {
             let ageRate = e.ageRating.toUpperCase();
             if(ageRate === "U"){
