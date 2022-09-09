@@ -9,7 +9,7 @@ const readViewings = () => {
              console.log(`Looks like there was a problem.Status Code: ${ response.status }`);
              return;
          } else {
-	return viewings
+	return response.json
 }})
      .catch(err => console.error(`Fetch Error :-S ${err}`));
      };
