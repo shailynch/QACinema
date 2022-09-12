@@ -26,7 +26,7 @@ user-friendly web interface.
 
 ## Authors
 
-* **Onur Hassan** - *Project Dev* - [on-ur](https://github.com/on-ur) - [Portfolio]
+* **Onur Hassan** - *Project Dev* - [on-ur](https://github.com/on-ur) - [Portfolio](https://github.com/shailynch/QACinema/blob/main/Portfolios/Onur%20Hassan%20Portfolio.pdf)
 
 * **Andrew Pimlott** - *Project Dev* - [Pimmy17](https://github.com/Pimmy17) - [Portfolio](https://github.com/shailynch/QACinema/blob/main/Portfolios/AndyPimlottPortfolio.pdf)
 
